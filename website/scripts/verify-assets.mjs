@@ -119,12 +119,15 @@ for (const file of actualShots) {
 checkFileNonEmpty(path.join(websiteDir, "public", "icon.png"), 1024);
 checkFileNonEmpty(path.join(websiteDir, "public", "favicon.ico"), 1024);
 
-// 2c. Verify No Dump / Selftest Files Left in ekpill
-const ekpillDir = path.join(repoRoot, "ekpill");
-const ekpillFiles = fs.readdirSync(ekpillDir);
-for (const f of ekpillFiles) {
-  if (f.startsWith("ekpill_selftest_")) {
-    fail(`Found unexpected selftest dump file: ${f}`);
+// 2c. Verify No Dump / Selftest Files Left in repoRoot or ekpill
+for (const dir of [repoRoot, path.join(repoRoot, "ekpill")]) {
+  if (fs.existsSync(dir)) {
+    const files = fs.readdirSync(dir);
+    for (const f of files) {
+      if (f.startsWith("ekpill_selftest_")) {
+        fail(`Found unexpected selftest dump file: ${f}`);
+      }
+    }
   }
 }
 

@@ -83,7 +83,7 @@
           <div class="reveal-item revealed">
             <a href="#download" class="hero-pill">
               <span class="hero-pill-badge">Release 1.3</span>
-              <span>Hardware-Notch Dynamic Capsule for Windows 10 &amp; 11</span>
+              <span>Dynamic Edge Capsule for Windows 10 &amp; 11</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
@@ -96,8 +96,8 @@
           </h1>
 
           <p class="hero-subtitle reveal-item revealed">
-            EkPill docks flush to the top or right display edge with hardware concave fillets and
-            <b>60 Hz click-through hit-testing</b>. Expands on demand into native quick settings,
+            EkPill docks flush to the top or right screen edge with concave fillets and
+            <b>60 Hz click-through hit-testing</b>. Expands on demand into quick settings,
             WinRT media, files, and apps.
           </p>
 
@@ -129,7 +129,7 @@
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
-              <span>60 Hz Click-Through Hit-Testing</span>
+              <span>60 Hz Click-Through</span>
             </span>
             <span class="hero-meta-item">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -205,11 +205,11 @@
         <div class="capabilities-grid">
           <div class="capability-card">
             <span class="tag">60 Hz Hit-Testing</span>
-            <p><b>WS_EX_TRANSPARENT</b> passes mouse clicks outside the capsule straight through to underlying apps.</p>
+            <p><b>WS_EX_TRANSPARENT</b> passes clicks outside the capsule directly to underlying windows.</p>
           </div>
           <div class="capability-card">
             <span class="tag">Dual-Edge Geometry</span>
-            <p>Dock as a <b>354×50 Top Hardware Notch</b> or a <b>68×198 Upright Right Dock</b> with concave fillets.</p>
+            <p>Dock as a <b>354×50 Top Notch</b> or <b>68×198 Upright Dock</b> with concave fillets.</p>
           </div>
           <div class="capability-card">
             <span class="tag">WinRT SMTC Media</span>
@@ -217,7 +217,7 @@
           </div>
           <div class="capability-card">
             <span class="tag">Safe Power Controls</span>
-            <p>Two-step safe power controls for <b>Lock, Sleep, Sign out, Restart, and Shut Down</b>.</p>
+            <p>Two-step guarded triggers for <b>Lock, Sleep, Sign out, Restart, and Shut Down</b>.</p>
           </div>
         </div>
       </section>
@@ -228,7 +228,7 @@
           <p class="section-eyebrow">Architecture &amp; Surfaces</p>
           <h2 class="section-title" id="features-title">Engineered for the display edge.</h2>
           <p class="section-desc">
-            Explore the authentic surfaces of EkPill captured at 1:1 pixel fidelity. Damped spring physics (<code>spring: 3.8, damping: 0.32</code>) and 60 Hz Win32 click-through hit-testing.
+            Explore authentic surfaces captured at 1:1 pixel fidelity with damped spring physics (<code>spring: 3.8, damping: 0.32</code>) and 60 Hz Win32 click-through hit-testing.
           </p>
         </div>
 
@@ -239,7 +239,7 @@
               <span class="bento-card-tag">Dual-Edge Architecture</span>
               <h3 class="bento-card-title">Top Notch &amp; Right Upright Dock</h3>
               <p class="bento-card-desc">
-                Flanked by GPU-antialiased <code>CurveRenderer</code> concave fillets, EkPill morphs between a <code>354×50</code> top notch and a <code>68×198</code> upright vertical dock with zero sideways numerals. 60 Hz <code>WS_EX_TRANSPARENT</code> passes clicks straight through.
+                Flanked by GPU-antialiased <code>CurveRenderer</code> concave fillets, EkPill morphs between a <code>354×50</code> top notch and a <code>68×198</code> upright vertical dock with upright glyphs and 60 Hz click-through.
               </p>
             </div>
             <div class="bento-preview-box bento-image-preview">
@@ -260,7 +260,7 @@
               <span class="bento-card-tag">Quick Settings Deck</span>
               <h3 class="bento-card-title">Master Volume &amp; Pods</h3>
               <p class="bento-card-desc">
-                Smooth master volume slider with cubic easing, hardware action pods (Wi-Fi, Bluetooth, Focus), and bottom launch strip.
+                Master volume slider with cubic easing, hardware action pods (Wi-Fi, Bluetooth, Focus), and bottom launch strip.
               </p>
             </div>
             <div class="bento-preview-box bento-image-preview">
@@ -302,7 +302,7 @@
               <span class="bento-card-tag">Settings &amp; Power</span>
               <h3 class="bento-card-title">Settings Switchboard &amp; Safe Power Menu</h3>
               <p class="bento-card-desc">
-                Instant edge selector switchboard (Top Notch vs Right Dock), autostart preferences, and two-step guarded power triggers for Lock, Sleep, Restart, and Shut Down.
+                Edge selector switchboard (Top Notch vs Right Dock), autostart preferences, and two-step guarded power triggers for Lock, Sleep, Restart, and Shut Down.
               </p>
             </div>
             <div class="bento-preview-box bento-image-preview">
@@ -311,6 +311,27 @@
                 alt="Bento 6: Settings Switchboard & Power Menu"
                 width="840"
                 height="388"
+                loading="lazy"
+                class="bento-cutout-img"
+              />
+            </div>
+          </article>
+
+          <!-- Bento 4: Native Files Hub & Drives (Span 2) -->
+          <article class="spotlight-card bento-span-2 reveal-item" data-tilt>
+            <div class="bento-card-top">
+              <span class="bento-card-tag">Native Shell32</span>
+              <h3 class="bento-card-title">Files Hub &amp; Drive Jumpers</h3>
+              <p class="bento-card-desc">
+                Navigate 7 Quick Folders and mounted drives (<code>C:</code> through <code>Z:</code>) with real-time sorting and right-click context actions wired to the Windows Recycle Bin.
+              </p>
+            </div>
+            <div class="bento-preview-box bento-image-preview">
+              <img
+                src="./showcase/bento_files_hub.png"
+                alt="Bento 4: Native Files Hub & Drives"
+                width="722"
+                height="664"
                 loading="lazy"
                 class="bento-cutout-img"
               />
@@ -337,27 +358,6 @@
               />
             </div>
           </article>
-
-          <!-- Bento 4: Native Files Hub & Drives (Span 2) -->
-          <article class="spotlight-card bento-span-2 reveal-item" data-tilt>
-            <div class="bento-card-top">
-              <span class="bento-card-tag">Native Shell32</span>
-              <h3 class="bento-card-title">In-Capsule Files Hub &amp; Drive Jumpers</h3>
-              <p class="bento-card-desc">
-                Navigate 7 Quick Folders and mounted drives (<code>C:</code> through <code>Z:</code>) with real-time sorting and right-click context actions wired to the Windows Recycle Bin (<code>SHFileOperationW</code>).
-              </p>
-            </div>
-            <div class="bento-preview-box bento-image-preview">
-              <img
-                src="./showcase/bento_files_hub.png"
-                alt="Bento 4: Native Files Hub & Drives"
-                width="722"
-                height="664"
-                loading="lazy"
-                class="bento-cutout-img"
-              />
-            </div>
-          </article>
         </div>
       </section>
 
@@ -367,7 +367,7 @@
           <p class="section-eyebrow">Walkthrough</p>
           <h2 class="section-title" id="screen-recording-title">Experience EkPill in motion.</h2>
           <p class="section-desc">
-            Watch the high-definition interactive screen recording below. Switch across all 5 choreographed chapters, scrub the timeline, or inspect how each surface morphs.
+            Direct screen recordings of the desktop experience. Select a chapter below or scrub the timeline to explore each surface.
           </p>
         </div>
 
@@ -534,9 +534,9 @@
                 </div>
                 <div class="key-group">
                   <span class="key-3d">Ctrl</span>
-                  <span style="color: var(--text-muted)">+</span>
+                  <span class="key-sep">+</span>
                   <span class="key-3d">Alt</span>
-                  <span style="color: var(--text-muted)">+</span>
+                  <span class="key-sep">+</span>
                   <span class="key-3d">L</span>
                 </div>
               </div>
@@ -547,7 +547,7 @@
                   <p>Unpins any active panel and springs back to the 332×50 notch</p>
                 </div>
                 <div class="key-group">
-                  <span class="key-3d" style="min-width: 58px">Esc</span>
+                  <span class="key-3d key-3d-wide">Esc</span>
                 </div>
               </div>
 
@@ -557,7 +557,7 @@
                   <p>60 Hz cursor hit-test inside capsule disables WS_EX_TRANSPARENT</p>
                 </div>
                 <div class="key-group">
-                  <span class="key-3d" style="min-width: 78px">Hover</span>
+                  <span class="key-3d key-3d-wide">Hover</span>
                 </div>
               </div>
 
@@ -567,7 +567,7 @@
                   <p>Keeps expanded utility open even when cursor moves away</p>
                 </div>
                 <div class="key-group">
-                  <span class="key-3d" style="min-width: 78px">Click</span>
+                  <span class="key-3d key-3d-wide">Click</span>
                 </div>
               </div>
 
@@ -577,7 +577,7 @@
                   <p>VK_LBUTTON poll outside QML bounding box collapses panel</p>
                 </div>
                 <div class="key-group">
-                  <span class="key-3d" style="min-width: 84px">Outside</span>
+                  <span class="key-3d key-3d-wide">Outside</span>
                 </div>
               </div>
 
@@ -588,7 +588,7 @@
                 </div>
                 <div class="key-group">
                   <span class="key-3d">Alt</span>
-                  <span style="color: var(--text-muted)">+</span>
+                  <span class="key-sep">+</span>
                   <span class="key-3d">E</span>
                 </div>
               </div>
@@ -866,7 +866,7 @@
       <section class="section-wrapper" id="download" aria-labelledby="download-title">
         <div class="download-box reveal-item">
           <div>
-            <div class="hero-pill" style="margin-bottom: 1rem">
+            <div class="hero-pill download-pill">
               <span class="hero-pill-badge">Windows 10 &amp; 11</span>
               <span>64-bit Edition · Self-Contained Installer</span>
             </div>
@@ -891,7 +891,7 @@
             <div class="sha-verification-box">
               <div class="sha-header">
                 <span>Cryptographic SHA-256 Checksum</span>
-                <span style="color: var(--success); font-weight: 600">Verified Official Hash</span>
+                <span class="sha-badge-verified">Verified Official Hash</span>
               </div>
               <div class="sha-code-row">
                 <code data-sha id="sha-target">9E03B568ABE83D9CD6DF9A84C043265469292F94BE85DF38A82868FA2AE3F29F</code>
@@ -915,21 +915,21 @@
               <ul class="channel-list">
                 <li class="channel-item">
                   <div>
-                    <b style="color: var(--text-primary); display: block">v1.3.0 Stable Installer</b>
-                    <span style="font-size: 0.75rem; color: var(--text-muted)">EkPillSetup.exe · 188,489,585 bytes</span>
+                    <b class="channel-title">v1.3.0 Stable Installer</b>
+                    <span class="channel-meta">EkPillSetup.exe · 188,489,585 bytes</span>
                   </div>
                   <a href="https://github.com/sidhu1512/ekpill/releases/latest/download/EkPillSetup.exe" data-download class="btn btn-secondary btn-sm">x64 Setup</a>
                 </li>
                 <li class="channel-item">
                   <div>
-                    <b style="color: var(--text-primary); display: block">Source Repository</b>
-                    <span style="font-size: 0.75rem; color: var(--text-muted)">MIT License · 114 Live Assertions</span>
+                    <b class="channel-title">Source Repository</b>
+                    <span class="channel-meta">MIT License · 114 Live Assertions</span>
                   </div>
                   <a href="https://github.com/sidhu1512/ekpill" data-source target="_blank" rel="noopener" class="btn btn-secondary btn-sm">GitHub</a>
                 </li>
               </ul>
             </div>
-            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1.5rem; line-height: 1.5">
+            <p class="download-privacy-note">
               EkPill stores all preferences in <code>~/.ekpill_config.json</code> with zero registry pollution unless you explicitly enable Start with Windows.
             </p>
           </div>
