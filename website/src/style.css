@@ -533,8 +533,8 @@ kbd {
    ========================================================================== */
 .hero-stage {
   position: relative;
-  max-width: 980px;
-  margin: 3.5rem auto 0;
+  max-width: 640px;
+  margin: 3rem auto 0;
 }
 
 .hero-float-bubble-wrap {
@@ -558,7 +558,7 @@ kbd {
   width: 220px;
   height: auto;
   border-radius: var(--radius-pill);
-  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.22)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.08));
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.4)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
   display: block;
 }
 
@@ -578,23 +578,23 @@ kbd {
   width: 280px;
   height: auto;
   border-radius: var(--radius-pill);
-  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.22)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.08));
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.4)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
   display: block;
 }
 
 /* Windows 11 App Light Frame */
 .app-frame {
   position: relative;
-  background: #ffffff;
+  background: var(--bg-card);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-hairline);
-  box-shadow: var(--shadow-app-frame);
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.06);
   overflow: hidden;
   transition: box-shadow 0.3s ease;
 }
 
 .app-frame:hover {
-  box-shadow: 0 40px 96px -24px rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 40px 96px -24px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(56, 189, 248, 0.18);
 }
 
 .app-titlebar {
@@ -602,7 +602,7 @@ kbd {
   align-items: center;
   justify-content: space-between;
   padding: 0.75rem 1.1rem;
-  background: var(--bg-platinum);
+  background: var(--bg-subtle);
   border-bottom: 1px solid var(--border-hairline);
   user-select: none;
 }
@@ -625,8 +625,8 @@ kbd {
   font-weight: 600;
   padding: 0.15rem 0.5rem;
   border-radius: var(--radius-pill);
-  background: #ffffff;
-  color: var(--text-secondary);
+  background: var(--bg-card);
+  color: var(--accent);
   border: 1px solid var(--border-hairline);
 }
 
@@ -652,7 +652,7 @@ kbd {
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  background: #d1d1d6;
+  background: #3b4252;
 }
 .app-win-btn.close { background: #ff5f57; }
 .app-win-btn.minimize { background: #febc2e; }
@@ -660,28 +660,34 @@ kbd {
 
 .app-viewport {
   position: relative;
-  background: var(--bg-platinum);
+  background: var(--bg);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2.2rem 1.5rem;
+  padding: 1.75rem 1.25rem;
   overflow: hidden;
 }
 
 .app-viewport-inner {
-  max-width: 440px;
+  max-width: 520px;
   width: 100%;
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.14), 0 0 0 1px rgba(0, 0, 0, 0.08);
-  background: #ffffff;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  background: #0b0e14;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .app-viewport-inner img {
-  width: 100%;
+  max-width: 100%;
+  width: auto;
   height: auto;
   display: block;
+  object-fit: contain;
+  margin: 0 auto;
 }
 
 .app-live-status-bar {
@@ -690,11 +696,12 @@ kbd {
   justify-content: center;
   gap: 0.5rem;
   padding: 0.45rem 0.8rem;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(18, 23, 34, 0.95);
   backdrop-filter: blur(10px);
   border-top: 1px solid var(--border-hairline);
   font-size: 0.74rem;
   color: var(--text-secondary);
+  width: 100%;
 }
 
 .status-indicator {
@@ -1381,7 +1388,7 @@ kbd {
    ACETERNITY INTERACTIVE SCREEN RECORDING VIDEO STUDIO
    ========================================================================== */
 .video-tour-box {
-  background: #ffffff;
+  background: var(--bg-card);
   border-radius: var(--radius-xl);
   border: 1px solid var(--border-hairline);
   box-shadow: var(--shadow-lg);
@@ -1391,7 +1398,7 @@ kbd {
 .video-chapters-bar {
   display: flex;
   border-bottom: 1px solid var(--border-hairline);
-  background: var(--bg-platinum);
+  background: var(--bg-subtle);
   overflow-x: auto;
 }
 
@@ -1408,11 +1415,11 @@ kbd {
 }
 
 .video-chapter-tab:hover {
-  background: rgba(0, 0, 0, 0.03);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .video-chapter-tab.active {
-  background: #ffffff;
+  background: var(--bg-card);
 }
 
 .chapter-time {
@@ -1492,7 +1499,7 @@ kbd {
 }
 
 .video-player-hud {
-  background: var(--bg-platinum);
+  background: var(--bg-subtle);
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-md);
   padding: 1rem;
@@ -1508,7 +1515,7 @@ kbd {
 .video-scrubber-bar {
   flex: 1;
   height: 6px;
-  background: #d1d1d6;
+  background: #252d3d;
   border-radius: 3px;
   position: relative;
   cursor: pointer;
@@ -1534,7 +1541,7 @@ kbd {
   background: #ffffff;
   border: 2px solid var(--accent);
   transform: translate(-50%, -50%);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .video-time-display {
@@ -1552,7 +1559,7 @@ kbd {
 /* Video Display Frame */
 .video-display-frame {
   position: relative;
-  background: var(--bg-platinum);
+  background: var(--bg);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-hairline);
   padding: 1.5rem;
@@ -1562,37 +1569,41 @@ kbd {
 }
 
 .video-screen-inner {
-  max-width: 580px;
+  max-width: 540px;
   width: 100%;
-  aspect-ratio: 16 / 10;
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 20px 48px -8px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.1);
-  background: #0d0f17;
+  box-shadow: 0 20px 48px -8px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  background: #0b0e14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
 }
 
 .video-screen-inner video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   display: block;
   z-index: 1;
 }
 
 .video-screen-inner img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   display: block;
   z-index: 0;
 }
 
 .screencast-cursor {
+  display: none !important;
   position: absolute;
   top: 30%;
   left: 45%;
@@ -2004,23 +2015,25 @@ kbd {
 .gallery-cards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .gallery-card {
   border-radius: var(--radius-lg);
-  background: #ffffff;
+  background: var(--bg-card);
   border: 1px solid var(--border-hairline);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   cursor: pointer;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .gallery-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(0, 113, 227, 0.3);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.5);
+  border-color: rgba(56, 189, 248, 0.3);
 }
 
 .gallery-card:active {
@@ -2028,27 +2041,34 @@ kbd {
 }
 
 .gallery-card-inner {
-  background: var(--bg-platinum);
-  padding: 1.25rem 1.25rem 0.5rem;
+  background: var(--bg);
+  padding: 1.25rem;
   display: flex;
+  align-items: center;
   justify-content: center;
+  min-height: 160px;
+  flex: 1;
 }
 
 .gallery-card-inner img {
-  width: 100%;
+  max-width: 100%;
+  max-height: 140px;
+  width: auto;
   height: auto;
+  object-fit: contain;
+  margin: 0 auto;
   border-radius: var(--radius-sm);
-  box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.35);
   transition: transform 0.3s ease;
 }
 
 .gallery-card:hover .gallery-card-inner img {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 .gallery-card-caption {
-  padding: 1rem 1.25rem;
-  background: #ffffff;
+  padding: 0.9rem 1.15rem;
+  background: var(--bg-card);
   border-top: 1px solid var(--border-hairline);
 }
 
@@ -2068,7 +2088,7 @@ kbd {
    DOWNLOAD & CRYPTOGRAPHIC VERIFICATION
    ========================================================================== */
 .download-box {
-  background: #ffffff;
+  background: var(--bg-card);
   border-radius: var(--radius-xl);
   border: 1px solid var(--border-hairline);
   box-shadow: var(--shadow-lg);
@@ -2333,7 +2353,7 @@ kbd {
 .lightbox-modal {
   position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(7, 9, 14, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   z-index: 1000;
@@ -2354,7 +2374,7 @@ kbd {
   height: 44px;
   border-radius: 50%;
   border: 1px solid var(--border-hairline);
-  background: #ffffff;
+  background: var(--bg-card);
   color: var(--text-primary);
   font-size: 1.5rem;
   cursor: pointer;
@@ -2377,7 +2397,7 @@ kbd {
   height: 48px;
   border-radius: 50%;
   border: 1px solid var(--border-hairline);
-  background: #ffffff;
+  background: var(--bg-card);
   color: var(--text-primary);
   font-size: 1.8rem;
   cursor: pointer;
@@ -2403,13 +2423,13 @@ kbd {
 }
 
 .lightbox-content img {
-  max-width: 460px;
-  width: 100%;
+  max-width: 100%;
+  width: auto;
   max-height: 82vh;
   object-fit: contain;
   border-radius: var(--radius-md);
-  box-shadow: 0 32px 80px -16px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(0, 0, 0, 0.08);
-  background: #ffffff;
+  box-shadow: 0 32px 80px -16px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  background: transparent;
 }
 
 .lightbox-caption {

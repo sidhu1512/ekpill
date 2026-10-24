@@ -4,7 +4,7 @@ const $ = (selector, parent = document) => parent.querySelector(selector);
 const $$ = (selector, parent = document) => [...parent.querySelectorAll(selector)];
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-let currentAppTheme = "light";
+const currentAppTheme = "dark";
 
 // ==========================================================================
 // 1. CONFIG & METADATA BINDINGS
@@ -153,19 +153,25 @@ function parseCapsuleCommand(text) {
   const lower = text.toLowerCase();
 
   if (lower.includes("edge:right") || lower.includes("right") || lower.includes("vertical")) {
-    chips.push({ type: "date", label: "Edge: Right (58×178 Upright)" });
+    chips.push({ type: "date", label: "Edge: Right (68×198 Upright)" });
   } else {
-    chips.push({ type: "date", label: "Edge: Top (332×50 Notch)" });
+    chips.push({ type: "date", label: "Edge: Top (354×50 Notch)" });
   }
 
   if (lower.includes("page:quick") || lower.includes("quick")) {
-    chips.push({ type: "duration", label: "Panel: QuickSettings (425×230)" });
-  } else if (lower.includes("page:recorder") || lower.includes("record")) {
-    chips.push({ type: "duration", label: "Panel: ScreenRecorder (425×366)" });
-  } else if (lower.includes("page:audio") || lower.includes("wasapi") || lower.includes("mixer")) {
-    chips.push({ type: "duration", label: "Panel: AudioView WASAPI (475×539)" });
+    chips.push({ type: "duration", label: "Panel: QuickSettings (426×213)" });
+  } else if (lower.includes("page:settings") || lower.includes("setting")) {
+    chips.push({ type: "duration", label: "Panel: SettingsSwitchboard (314×328)" });
+  } else if (lower.includes("page:power") || lower.includes("power")) {
+    chips.push({ type: "duration", label: "Panel: PowerMenu (426×150)" });
+  } else if (lower.includes("page:media") || lower.includes("media") || lower.includes("smtc")) {
+    chips.push({ type: "duration", label: "Panel: SMTC Media Player (466×228)" });
+  } else if (lower.includes("page:files") || lower.includes("file")) {
+    chips.push({ type: "duration", label: "Panel: FilesHub (650×608)" });
+  } else if (lower.includes("page:launcher") || lower.includes("launcher")) {
+    chips.push({ type: "duration", label: "Panel: AppLauncher (588×525)" });
   } else if (lower.includes("page:collapsed") || lower.includes("collapsed")) {
-    chips.push({ type: "duration", label: "State: Collapsed Capsule" });
+    chips.push({ type: "duration", label: "State: Collapsed Capsule (354×50)" });
   }
 
   if (lower.includes("spring")) {
@@ -174,13 +180,10 @@ function parseCapsuleCommand(text) {
   if (lower.includes("60hz") || lower.includes("hit")) {
     chips.push({ type: "tag", label: "#WS_EX_TRANSPARENT:60Hz" });
   }
-  if (lower.includes("fps:60") || lower.includes("60fps")) {
-    chips.push({ type: "priority", label: "60 FPS H.264" });
-  }
-  if (lower.includes("!pinned") || lower.includes("!recording")) {
+  if (lower.includes("!pinned")) {
     chips.push({
       type: "priority",
-      label: lower.includes("!recording") ? "REC 00:14 Active" : "Pinned (Esc to close)",
+      label: "Pinned (Esc to close)",
     });
   }
 
@@ -190,7 +193,7 @@ function parseCapsuleCommand(text) {
 function renderNlpChips(chips) {
   if (!nlpChips) return;
   if (!chips.length) {
-    nlpChips.innerHTML = `<span style="font-size:0.75rem;color:var(--text-muted);font-style:italic;">Type state tokens (edge:top, page:quick, fps:60, !pinned)...</span>`;
+    nlpChips.innerHTML = `<span style="font-size:0.75rem;color:var(--text-muted);font-style:italic;">Type state tokens (edge:top, page:quick, !pinned)...</span>`;
     return;
   }
   nlpChips.innerHTML = chips
@@ -222,83 +225,37 @@ $$(".nlp-preset-btn").forEach((btn) => {
   });
 });
 
-// --- Widget 2: 60 FPS Screen Recorder Simulator with SVG Progress Ring
-const focusClock = $("#focus-sim-clock");
-const focusToggleBtn = $("#focus-sim-toggle");
-const focusResetBtn = $("#focus-sim-reset");
-const focusRingCircle = $("#focus-ring-circle");
+// --- Widget 2: Settings Switchboard & Power Hub Simulator
+const simEdgeTop = $("#sim-edge-top");
+const simEdgeRight = $("#sim-edge-right");
+const simSettingsLabel = $("#sim-settings-label");
+const settingsStatusTag = $("#settings-status-tag");
 const spotifyEq = $("#spotify-eq");
-const spotifyStatusTag = $("#spotify-status-tag");
 
-const TOTAL_REC_SECONDS = 60;
-let focusSeconds = 14;
-let focusInterval = null;
-let focusRunning = false;
-const CIRCLE_CIRCUMFERENCE = 226.2;
-
-function updateFocusDisplay() {
-  if (!focusClock) return;
-  const m = String(Math.floor(focusSeconds / 60)).padStart(2, "0");
-  const s = String(focusSeconds % 60).padStart(2, "0");
-  focusClock.textContent = `${m}:${s}`;
-
-  if (focusRingCircle) {
-    const progress = (focusSeconds % TOTAL_REC_SECONDS) / TOTAL_REC_SECONDS;
-    const offset = CIRCLE_CIRCUMFERENCE * (1 - progress);
-    focusRingCircle.style.strokeDashoffset = String(offset);
-  }
-}
-
-function toggleFocusTimer() {
-  if (focusRunning) {
-    clearInterval(focusInterval);
-    focusRunning = false;
-    if (focusToggleBtn)
-      focusToggleBtn.innerHTML =
-        '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3"/></svg>';
-    spotifyEq?.classList.remove("active");
-    if (spotifyStatusTag) {
-      spotifyStatusTag.textContent = "Paused";
-      spotifyStatusTag.classList.remove("active");
-    }
-    showToast("Screen recording paused (segment saved)");
-  } else {
-    focusRunning = true;
-    if (focusToggleBtn)
-      focusToggleBtn.innerHTML =
-        '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>';
-    spotifyEq?.classList.add("active");
-    if (spotifyStatusTag) {
-      spotifyStatusTag.textContent = "REC 60fps";
-      spotifyStatusTag.classList.add("active");
-    }
-    focusInterval = setInterval(() => {
-      focusSeconds++;
-      updateFocusDisplay();
-    }, 1000);
-    showToast("Recording desktop at 60 FPS (crash-safe .mkv)");
-  }
-}
-
-focusToggleBtn?.addEventListener("click", toggleFocusTimer);
-focusResetBtn?.addEventListener("click", () => {
-  clearInterval(focusInterval);
-  focusRunning = false;
-  focusSeconds = 0;
-  if (focusToggleBtn)
-    focusToggleBtn.innerHTML =
-      '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3"/></svg>';
-  spotifyEq?.classList.remove("active");
-  if (spotifyStatusTag) {
-    spotifyStatusTag.textContent = "Remuxed MP4";
-    spotifyStatusTag.classList.remove("active");
-  }
-  updateFocusDisplay();
-  showToast("Remuxed recording to +faststart .mp4");
+simEdgeTop?.addEventListener("click", () => {
+  simEdgeTop.classList.add("primary");
+  simEdgeRight?.classList.remove("primary");
+  if (simSettingsLabel) simSettingsLabel.textContent = "Active Edge: Top Hardware Notch (354×50)";
+  if (settingsStatusTag) settingsStatusTag.textContent = "Top Docked";
+  spotifyEq?.classList.add("active");
+  showToast("Dock edge switched to Top Notch (354×50 px)");
 });
-updateFocusDisplay();
 
-// --- Widget 3: WinRT SMTC & WASAPI WaveBars Simulator
+simEdgeRight?.addEventListener("click", () => {
+  simEdgeRight.classList.add("primary");
+  simEdgeTop?.classList.remove("primary");
+  if (simSettingsLabel) simSettingsLabel.textContent = "Active Edge: Right Upright Dock (68×198)";
+  if (settingsStatusTag) settingsStatusTag.textContent = "Right Docked";
+  spotifyEq?.classList.add("active");
+  showToast("Dock edge switched to Right Upright Dock (68×198 px)");
+});
+
+$("#sim-pwr-lock")?.addEventListener("click", () => showToast("Power Menu: LockWorkStation invoked"));
+$("#sim-pwr-sleep")?.addEventListener("click", () => showToast("Power Menu: SetSuspendState (Sleep) confirmed"));
+$("#sim-pwr-restart")?.addEventListener("click", () => showToast("Power Menu: Restart confirmed (two-step verified)"));
+$("#sim-pwr-shutdown")?.addEventListener("click", () => showToast("Power Menu: Shut down confirmed (two-step verified)"));
+
+// --- Widget 3: WinRT SMTC & WaveBars Simulator
 const whisperMic = $("#whisper-mic");
 const whisperWaveBars = $$("#whisper-wave i");
 const whisperText = $("#whisper-text");
@@ -307,10 +264,10 @@ let waveTimer = null;
 let typeStreamTimer = null;
 
 const demoVoicePhrases = [
-  "SMTC Session: Midnight City — M83 (01:42 / 04:03) · WASAPI: Spotify 88%, Chrome 65%, Discord 45%",
-  "WASAPI Endpoint: Speakers (Realtek Audio) Master 85% · Per-App Sessions: 4 active audio streams",
-  "WinRT GlobalSystemMediaTransportControlsSession: Thumbnail stream cached · WaveBars 60fps active",
-  "AudioView Mixer: Spotify muted -> unmuted (88%) · Chrome set_app_volume(0, 65)",
+  "SMTC Session: Midnight City — M83 (01:42 / 04:03) · High-DPI album art cached",
+  "WinRT SMTC: GlobalSystemMediaTransportControlsSession active · WaveBars 60fps",
+  "Media Studio: Transport state Playing · 4-bar equalizer synchronized",
+  "Quick Settings: Master volume 85% · WinRT SMTC session active",
 ];
 
 whisperMic?.addEventListener("click", () => {
@@ -324,7 +281,7 @@ whisperMic?.addEventListener("click", () => {
   } else {
     isRecording = true;
     whisperMic.classList.add("recording");
-    showToast("Polling WinRT SMTC & WASAPI audio sessions...");
+    showToast("Polling WinRT SMTC media session...");
 
     waveTimer = setInterval(() => {
       whisperWaveBars.forEach((bar) => {
@@ -347,7 +304,7 @@ whisperMic?.addEventListener("click", () => {
         whisperMic.classList.remove("recording");
         whisperWaveBars.forEach((b) => (b.style.height = "6px"));
         if (whisperText) whisperText.textContent += '"';
-        showToast("SMTC & WASAPI telemetry synchronized");
+        showToast("WinRT SMTC telemetry synchronized");
       }
     }, 35);
   }
@@ -707,14 +664,14 @@ const shortcutConfig = {
     action: "Auto-Dismiss & Pass-Through",
     latency: "16ms (60 Hz poll)",
     desc: "Detects VK_LBUTTON clicks outside the live QML bounding box and collapses the active panel.",
-    shot: "audio-mixer",
+    shot: "settings-switchboard",
     badge: "Outside Click",
   },
   "alt-e": {
     action: "Toggle Top / Right Edge Dock",
     latency: "< 8ms response",
-    desc: "Switches between the Top Horizontal Notch (332×50) and the Right Upright Vertical Dock (58×178).",
-    shot: "recorder-settings",
+    desc: "Switches between the Top Horizontal Notch (354×50) and the Right Upright Vertical Dock (68×198).",
+    shot: "power-menu",
     badge: "Alt + E",
   },
 };
@@ -801,33 +758,6 @@ $$(".filter-chip").forEach((btn) => {
       card.style.display = filter === "all" || cat === filter ? "" : "none";
     });
   });
-});
-
-$("#gallery-theme-toggle")?.addEventListener("click", () => {
-  currentAppTheme = currentAppTheme === "light" ? "dark" : "light";
-  const label = $("#gallery-theme-text");
-  if (label) label.textContent = `Backdrop: ${currentAppTheme === "light" ? "Light" : "Dark"}`;
-
-  const heroImg = $("#hero-app-image");
-  if (heroImg) heroImg.src = `./shots/capsule-top-${currentAppTheme}.png`;
-
-  const pipImg = $("#hero-pip");
-  if (pipImg) pipImg.src = `./shots/pip-${currentAppTheme}.png`;
-
-  $$("#gallery-grid .gallery-card").forEach((card) => {
-    const shot = card.dataset.shot;
-    const img = $("img", card);
-    if (img && shot) img.src = `./shots/${shot}-${currentAppTheme}.png`;
-  });
-
-  const activeShortcutCard = $(".shortcut-row-card.active");
-  const activeKey = activeShortcutCard?.dataset?.shortcut || "ctrl-alt-l";
-  const shortcutImg = $("#shortcut-preview-img");
-  if (shortcutImg && shortcutConfig[activeKey]) {
-    shortcutImg.src = `./shots/${shortcutConfig[activeKey].shot}-${currentAppTheme}.png`;
-  }
-
-  showToast(`Gallery & Hero switched to ${currentAppTheme} backdrop`);
 });
 
 const lightbox = $("#lightbox");
