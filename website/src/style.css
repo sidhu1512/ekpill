@@ -1,5 +1,5 @@
 /* ==========================================================================
-   DAYFLIT — PRISTINE APPLE LIGHT THEME DESIGN SYSTEM
+   EKPILL — PRISTINE APPLE LIGHT THEME DESIGN SYSTEM
    Design Foundation: Apple HIG + Emil Kowalski Fluid Design Standards
    Palette: Pure White (#ffffff), Warm Silver (#fbfbfd), Platinum (#f5f5f7)
    Hairlines: #e5e5ea · Text: #1d1d1f / #515154 / #86868b · Accent: #0071e3
@@ -1871,7 +1871,7 @@ kbd {
   margin-top: 0.2rem;
 }
 
-.matrix-dayflit-col {
+.matrix-ekpill-col {
   background: rgba(0, 113, 227, 0.03);
   font-weight: 700;
   color: var(--text-primary);
