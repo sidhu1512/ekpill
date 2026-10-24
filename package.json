@@ -20,9 +20,9 @@
     "qt6",
     "qml",
     "pyside6",
-    "wasapi",
     "winrt",
-    "screen-recorder",
+    "media-player",
+    "utility-capsule",
     "local-first"
   ],
   "scripts": {
