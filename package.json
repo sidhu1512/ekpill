@@ -1,7 +1,30 @@
 {
-  "name": "ekpill-root",
-  "private": true,
+  "name": "ekpill",
   "version": "1.3.0",
+  "description": "Dynamic Island & Hardware-Notch Desktop Utility Capsule for Windows 10 & 11",
+  "private": true,
+  "homepage": "https://sidhu1512.github.io/ekpill/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sidhu1512/ekpill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sidhu1512/ekpill/issues"
+  },
+  "author": "Siddharth <bhadusid1512@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "dynamic-island",
+    "windows11",
+    "desktop-app",
+    "qt6",
+    "qml",
+    "pyside6",
+    "wasapi",
+    "winrt",
+    "screen-recorder",
+    "local-first"
+  ],
   "scripts": {
     "website:dev": "npm --prefix website run dev",
     "website:build": "npm --prefix website run build",
