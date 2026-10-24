@@ -139,232 +139,14 @@ $$(".spotlight-card").forEach((card) => {
 });
 
 // ==========================================================================
-// 4. BENTO GRID INTERACTIVE WIDGETS
+// 4. FLAGSHIP BENTO SHOWCASE CUTOUTS (PURE PRODUCT ON OBSIDIAN CANVAS)
 // ==========================================================================
-
-// --- Widget 1: Live Capsule State & Geometry Tokenizer
-const nlpInput = $("#nlp-input");
-const nlpClearBtn = $("#nlp-clear-btn");
-const nlpChips = $("#nlp-chips");
-
-function parseCapsuleCommand(text) {
-  const chips = [];
-  if (!text || !text.trim()) return chips;
-  const lower = text.toLowerCase();
-
-  if (lower.includes("edge:right") || lower.includes("right") || lower.includes("vertical")) {
-    chips.push({ type: "date", label: "Edge: Right (68×198 Upright)" });
-  } else {
-    chips.push({ type: "date", label: "Edge: Top (354×50 Notch)" });
-  }
-
-  if (lower.includes("page:quick") || lower.includes("quick")) {
-    chips.push({ type: "duration", label: "Panel: QuickSettings (426×213)" });
-  } else if (lower.includes("page:settings") || lower.includes("setting")) {
-    chips.push({ type: "duration", label: "Panel: SettingsSwitchboard (314×328)" });
-  } else if (lower.includes("page:power") || lower.includes("power")) {
-    chips.push({ type: "duration", label: "Panel: PowerMenu (426×150)" });
-  } else if (lower.includes("page:media") || lower.includes("media") || lower.includes("smtc")) {
-    chips.push({ type: "duration", label: "Panel: SMTC Media Player (466×228)" });
-  } else if (lower.includes("page:files") || lower.includes("file")) {
-    chips.push({ type: "duration", label: "Panel: FilesHub (650×608)" });
-  } else if (lower.includes("page:launcher") || lower.includes("launcher")) {
-    chips.push({ type: "duration", label: "Panel: AppLauncher (588×525)" });
-  } else if (lower.includes("page:collapsed") || lower.includes("collapsed")) {
-    chips.push({ type: "duration", label: "State: Collapsed Capsule (354×50)" });
-  }
-
-  if (lower.includes("spring")) {
-    chips.push({ type: "tag", label: "#spring:3.8/0.32" });
-  }
-  if (lower.includes("60hz") || lower.includes("hit")) {
-    chips.push({ type: "tag", label: "#WS_EX_TRANSPARENT:60Hz" });
-  }
-  if (lower.includes("!pinned")) {
-    chips.push({
-      type: "priority",
-      label: "Pinned (Esc to close)",
-    });
-  }
-
-  return chips;
-}
-
-function renderNlpChips(chips) {
-  if (!nlpChips) return;
-  if (!chips.length) {
-    nlpChips.innerHTML = `<span style="font-size:0.75rem;color:var(--text-muted);font-style:italic;">Type state tokens (edge:top, page:quick, !pinned)...</span>`;
-    return;
-  }
-  nlpChips.innerHTML = chips
-    .map((c) => `<span class="nlp-chip ${c.type}">${c.label}</span>`)
-    .join("");
-}
-
-if (nlpInput) {
-  renderNlpChips(parseCapsuleCommand(nlpInput.value));
-  nlpInput.addEventListener("input", (e) => {
-    renderNlpChips(parseCapsuleCommand(e.target.value));
-  });
-}
-
-nlpClearBtn?.addEventListener("click", () => {
-  if (nlpInput) {
-    nlpInput.value = "";
-    nlpInput.focus();
-    renderNlpChips([]);
-  }
-});
-
-$$(".nlp-preset-btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const val = btn.dataset.preset;
-    if (nlpInput) nlpInput.value = val;
-    renderNlpChips(parseCapsuleCommand(val));
-    showToast(`Loaded capsule preset: ${btn.textContent}`);
-  });
-});
-
-// --- Widget 2: Settings Switchboard & Power Hub Simulator
-const simEdgeTop = $("#sim-edge-top");
-const simEdgeRight = $("#sim-edge-right");
-const simSettingsLabel = $("#sim-settings-label");
-const settingsStatusTag = $("#settings-status-tag");
-const spotifyEq = $("#spotify-eq");
-
-simEdgeTop?.addEventListener("click", () => {
-  simEdgeTop.classList.add("primary");
-  simEdgeRight?.classList.remove("primary");
-  if (simSettingsLabel) simSettingsLabel.textContent = "Active Edge: Top Hardware Notch (354×50)";
-  if (settingsStatusTag) settingsStatusTag.textContent = "Top Docked";
-  spotifyEq?.classList.add("active");
-  showToast("Dock edge switched to Top Notch (354×50 px)");
-});
-
-simEdgeRight?.addEventListener("click", () => {
-  simEdgeRight.classList.add("primary");
-  simEdgeTop?.classList.remove("primary");
-  if (simSettingsLabel) simSettingsLabel.textContent = "Active Edge: Right Upright Dock (68×198)";
-  if (settingsStatusTag) settingsStatusTag.textContent = "Right Docked";
-  spotifyEq?.classList.add("active");
-  showToast("Dock edge switched to Right Upright Dock (68×198 px)");
-});
-
-$("#sim-pwr-lock")?.addEventListener("click", () => showToast("Power Menu: LockWorkStation invoked"));
-$("#sim-pwr-sleep")?.addEventListener("click", () => showToast("Power Menu: SetSuspendState (Sleep) confirmed"));
-$("#sim-pwr-restart")?.addEventListener("click", () => showToast("Power Menu: Restart confirmed (two-step verified)"));
-$("#sim-pwr-shutdown")?.addEventListener("click", () => showToast("Power Menu: Shut down confirmed (two-step verified)"));
-
-// --- Widget 3: WinRT SMTC & WaveBars Simulator
-const whisperMic = $("#whisper-mic");
-const whisperWaveBars = $$("#whisper-wave i");
-const whisperText = $("#whisper-text");
-let isRecording = false;
-let waveTimer = null;
-let typeStreamTimer = null;
-
-const demoVoicePhrases = [
-  "SMTC Session: Midnight City — M83 (01:42 / 04:03) · High-DPI album art cached",
-  "WinRT SMTC: GlobalSystemMediaTransportControlsSession active · WaveBars 60fps",
-  "Media Studio: Transport state Playing · 4-bar equalizer synchronized",
-  "Quick Settings: Master volume 85% · WinRT SMTC session active",
-];
-
-whisperMic?.addEventListener("click", () => {
-  if (isRecording) {
-    clearInterval(waveTimer);
-    clearInterval(typeStreamTimer);
-    isRecording = false;
-    whisperMic.classList.remove("recording");
-    whisperWaveBars.forEach((b) => (b.style.height = "6px"));
-    showToast("WaveBars equalizer paused");
-  } else {
-    isRecording = true;
-    whisperMic.classList.add("recording");
-    showToast("Polling WinRT SMTC media session...");
-
-    waveTimer = setInterval(() => {
-      whisperWaveBars.forEach((bar) => {
-        bar.style.height = `${4 + Math.random() * 18}px`;
-      });
-    }, 120);
-
-    const phrase = demoVoicePhrases[Math.floor(Math.random() * demoVoicePhrases.length)];
-    if (whisperText) whisperText.textContent = '"';
-    let charIdx = 0;
-
-    typeStreamTimer = setInterval(() => {
-      if (charIdx < phrase.length) {
-        if (whisperText) whisperText.textContent += phrase[charIdx];
-        charIdx++;
-      } else {
-        clearInterval(typeStreamTimer);
-        clearInterval(waveTimer);
-        isRecording = false;
-        whisperMic.classList.remove("recording");
-        whisperWaveBars.forEach((b) => (b.style.height = "6px"));
-        if (whisperText) whisperText.textContent += '"';
-        showToast("WinRT SMTC telemetry synchronized");
-      }
-    }, 35);
-  }
-});
-
-// --- Widget 4: Wireless Radio Scan
-$("#calendar-join-btn")?.addEventListener("click", () => {
-  showToast("Scanned 5 WLAN networks & 4 Bluetooth devices via netsh/WinRT");
-});
-
-// --- Widget 5: Activity Matrix & Bento Tab Switcher
-function buildHeatmap() {
-  const container = $("#heatmap-grid");
-  if (!container) return;
-
-  const totalWeeks = 38;
-  const daysPerWeek = 7;
-  let html = "";
-  const now = new Date();
-
-  for (let w = 0; w < totalWeeks; w++) {
-    html += '<div class="heatmap-col">';
-    for (let d = 0; d < daysPerWeek; d++) {
-      const daysAgo = (totalWeeks - 1 - w) * 7 + (6 - d);
-      const cellDate = new Date(now.getTime() - daysAgo * 24 * 60 * 60 * 1000);
-      const dateStr = cellDate.toLocaleDateString(undefined, {
-        weekday: "short",
-        month: "short",
-        day: "numeric",
-      });
-
-      let level = 0;
-      const seed = (w * 7 + d * 13) % 100;
-      if (w > totalWeeks - 8) {
-        if (seed > 20) level = (seed % 4) + 1;
-      } else if (w > totalWeeks - 20) {
-        if (seed > 40) level = (seed % 3) + 1;
-      } else {
-        if (seed > 60) level = (seed % 2) + 1;
-      }
-
-      const opsCount = level === 0 ? 0 : level * 3 + (seed % 4);
-      const tooltip = `${dateStr} · ${opsCount} capsule actions & file ops`;
-      html += `<div class="heatmap-cell" data-level="${level}" title="${tooltip}"></div>`;
-    }
-    html += "</div>";
-  }
-  container.innerHTML = html;
-}
-buildHeatmap();
-
-$$(".bento-tab-btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    $$(".bento-tab-btn").forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-    const target = btn.dataset.bentoTab;
-
-    $$(".bento-tab-content").forEach((c) => {
-      c.classList.toggle("active", c.id === `tab-${target}`);
-    });
+$$(".bento-image-preview").forEach((preview) => {
+  const img = $("img", preview);
+  if (!img) return;
+  preview.addEventListener("click", () => {
+    openLightbox(img.getAttribute("src"), img.getAttribute("alt") || "EkPill Flagship Showcase");
+    playKeyClick();
   });
 });
 
@@ -773,13 +555,23 @@ const galleryItems = SITE.gallery.map((g) => ({
 
 let currentLbIndex = 0;
 
-function openLightbox(index) {
+function openLightbox(target, customCaption = "") {
   if (!lightbox || !lbImage) return;
-  currentLbIndex = (index + galleryItems.length) % galleryItems.length;
-  const item = galleryItems[currentLbIndex];
-  lbImage.src = `./shots/${item.shot}-${currentAppTheme}.png`;
-  lbImage.alt = item.caption;
-  if (lbCaption) lbCaption.textContent = item.caption;
+  if (typeof target === "number") {
+    currentLbIndex = (target + galleryItems.length) % galleryItems.length;
+    const item = galleryItems[currentLbIndex];
+    lbImage.src = `./shots/${item.shot}-${currentAppTheme}.png`;
+    lbImage.alt = item.caption;
+    if (lbCaption) lbCaption.textContent = item.caption;
+    if (lbPrev) lbPrev.style.display = "";
+    if (lbNext) lbNext.style.display = "";
+  } else {
+    lbImage.src = target;
+    lbImage.alt = customCaption || "EkPill Flagship Showcase";
+    if (lbCaption) lbCaption.textContent = customCaption || "EkPill Flagship Showcase";
+    if (lbPrev) lbPrev.style.display = "none";
+    if (lbNext) lbNext.style.display = "none";
+  }
   lightbox.hidden = false;
 }
 

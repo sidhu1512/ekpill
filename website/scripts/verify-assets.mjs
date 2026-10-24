@@ -128,6 +128,14 @@ for (const f of ekpillFiles) {
   }
 }
 
+// 2d. Verify No Obsolete Assets in docs/
+const docsAppIcon = path.join(repoRoot, "docs", "app-icon.png");
+if (fs.existsSync(docsAppIcon)) {
+  fail("Found obsolete docs/app-icon.png in repository docs/");
+} else {
+  pass("Verified zero obsolete docs/app-icon.png in docs/");
+}
+
 // 3. Parse README.md and verify all local relative image/doc links
 const readmePath = path.join(repoRoot, "README.md");
 if (checkFileNonEmpty(readmePath, 4096)) {
@@ -163,6 +171,24 @@ if (checkFileNonEmpty(indexHtmlPath, 4096)) {
       checkFileNonEmpty(inPublic, 100, `index.html public ref -> ${rel}`);
     } else {
       checkFileNonEmpty(inWebsite, 100, `index.html src ref -> ${rel}`);
+    }
+  }
+
+  // Strict check: Ensure all 7 flagship showcase cutouts are present in index.html
+  for (const png of showcasePngs) {
+    if (!html.includes(`showcase/${png}`)) {
+      fail(`website/index.html is missing flagship showcase asset: showcase/${png}`);
+    } else {
+      pass(`website/index.html showcases: showcase/${png}`);
+    }
+  }
+
+  // Strict check: Ensure all 8 authentic dark utility surfaces are present in index.html
+  for (const base of galleryBases) {
+    if (!html.includes(`shots/${base}-dark.png`)) {
+      fail(`website/index.html is missing authentic utility shot: shots/${base}-dark.png`);
+    } else {
+      pass(`website/index.html showcases shot: shots/${base}-dark.png`);
     }
   }
 }
