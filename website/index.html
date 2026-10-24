@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EkPill — Dynamic Island &amp; Hardware-Notch Utility Capsule for Windows 10 &amp; 11</title>
+    <title>EkPill — Dynamic Hardware-Notch Utility Capsule for Windows 10 &amp; 11</title>
     <meta
       name="description"
-      content="EkPill transforms the top or right edge of your Windows 10/11 display into a fluid, spring-physics obsidian capsule housing Quick Settings, WinRT SMTC Media, Native Files Hub, Start Menu App Launcher, Settings Switchboard, and Safe Power Menu."
+      content="EkPill docks to the top or right edge of your Windows 10/11 display with spring physics and 60 Hz hit-testing. Housing Quick Settings, WinRT Media, Files Hub, App Launcher, and Safe Power."
     />
     <meta property="og:title" content="EkPill — Hardware-Notch Dynamic Capsule for Windows" />
     <meta
       property="og:description"
-      content="One obsidian capsule at the screen edge. Native utilities inside. Built with Qt6 QML, Win32 WS_EX_TRANSPARENT hit-testing, WinRT SMTC, Shell32, and Netsh."
+      content="One capsule at the screen edge. Native utilities inside. Built with Qt6 QML, Win32 WS_EX_TRANSPARENT hit-testing, WinRT SMTC, Shell32, and Netsh."
     />
     <meta property="og:image" content="./shots/capsule-top-dark.png" />
-    <meta name="theme-color" content="#07090e" />
+    <meta name="theme-color" content="#f5f5f7" />
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="./icon.png" />
     <link rel="apple-touch-icon" href="./icon.png" />
@@ -27,12 +27,12 @@
     <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
-    <!-- Obsidian Ambient Mesh -->
+    <!-- Apple Ambient Mesh -->
     <div class="apple-bg-mesh" aria-hidden="true"></div>
 
     <a class="skip-link" href="#main">Skip to main content</a>
 
-    <!-- ================= ACETERNITY FLOATING CAPSULE NAVBAR ================= -->
+    <!-- ================= FLOATING CAPSULE NAVBAR ================= -->
     <div class="floating-navbar-container">
       <header class="floating-navbar" id="navbar">
         <a class="brand" href="#" aria-label="EkPill home">
@@ -43,7 +43,7 @@
 
         <nav class="nav-links" aria-label="Primary Navigation">
           <a href="#features">Features</a>
-          <a href="#screen-recording">Screen Recording</a>
+          <a href="#screen-recording">Walkthrough</a>
           <a href="#shortcuts">Shortcuts</a>
           <a href="#compare">Comparison</a>
           <a href="#gallery">Gallery</a>
@@ -77,7 +77,7 @@
     </nav>
 
     <main id="main">
-      <!-- ================= APPLE AMBIENT HERO ================= -->
+      <!-- ================= HERO SECTION ================= -->
       <section class="hero-section" aria-labelledby="hero-title">
         <div class="hero-content">
           <div class="reveal-item revealed">
@@ -91,13 +91,13 @@
           </div>
 
           <h1 class="hero-title reveal-item revealed" id="hero-title">
-            One obsidian capsule at the edge.<br class="hero-br" />
-            <span class="hero-accent-text">Eight authentic surfaces inside.</span>
+            One capsule at the edge.<br class="hero-br" />
+            <span class="hero-accent-text">Eight native surfaces inside.</span>
           </h1>
 
           <p class="hero-subtitle reveal-item revealed">
-            EkPill docks seamlessly to the top or right edge of your Windows 10/11 monitor with hardware-notch concave fillets and
-            <b>60 Hz click-through hit-testing</b>. Hover or click to morph into Quick Settings, WinRT SMTC Media,
+            EkPill docks seamlessly to the top or right display edge with hardware-notch concave fillets and
+            <b>60 Hz click-through hit-testing</b>. Expand on demand for Quick Settings, WinRT SMTC Media,
             Native Files Hub, Instant App Launcher, Settings Switchboard, and Safe Power Menu.
           </p>
 
@@ -140,7 +140,7 @@
           </div>
         </div>
 
-        <!-- Obsidian Hero Stage -->
+        <!-- Hero Stage -->
         <div class="hero-stage reveal-item revealed" id="hero-stage">
           <!-- Floating Collapsed Top-Edge Hardware Notch -->
           <div class="hero-float-bubble-wrap" id="hero-bubble-wrap" title="Click to test capsule interaction">
@@ -166,7 +166,7 @@
             />
           </div>
 
-          <!-- Main Windows 11 App Frame -->
+          <!-- Windows 11 App Frame -->
           <div class="app-frame" id="hero-frame">
             <div class="app-titlebar">
               <div class="app-titlebar-left">
@@ -204,24 +204,24 @@
         </div>
       </section>
 
-      <!-- ================= ACETERNITY INFINITE MOVING CARDS ================= -->
-      <section class="marquee-section" aria-label="Power user workflows">
+      <!-- ================= MARQUEE SECTION ================= -->
+      <section class="marquee-section" aria-label="System capabilities">
         <div class="marquee-track" id="marquee-track">
           <div class="marquee-card">
             <span class="tag">60 Hz Hit-Testing</span>
-            <span><b>WS_EX_TRANSPARENT</b> passes mouse clicks outside the live QML capsule straight through to underlying apps.</span>
+            <span><b>WS_EX_TRANSPARENT</b> passes mouse clicks outside the capsule straight through to underlying apps.</span>
           </div>
           <div class="marquee-card">
             <span class="tag">WinRT SMTC Media</span>
-            <span>Live album art, track metadata, interactive seeker, and responsive <b>WaveBars</b> audio visualizer.</span>
+            <span>Live album art, track metadata, interactive progress seeker, and responsive <b>WaveBars</b> equalizer.</span>
           </div>
           <div class="marquee-card">
             <span class="tag">Settings Switchboard</span>
-            <span>Custom dock edge selector (Top/Right), Windows autostart toggle, hotkey rebinding, and auto-hide.</span>
+            <span>Custom dock edge selector (Top/Right), Windows autostart toggle, and hotkey rebinding.</span>
           </div>
           <div class="marquee-card">
             <span class="tag">Dual-Edge Geometry</span>
-            <span>Dock as a <b>354×50 Top Hardware Notch</b> or a <b>68×198 Upright Right-Edge Dock</b> with concave fillets.</span>
+            <span>Dock as a <b>354×50 Top Hardware Notch</b> or a <b>68×198 Upright Right Dock</b> with concave fillets.</span>
           </div>
           <div class="marquee-card">
             <span class="tag">Safe Power Menu</span>
@@ -229,35 +229,35 @@
           </div>
           <div class="marquee-card">
             <span class="tag">Files &amp; Launcher</span>
-            <span>Quick Folders, drive jumpers (<b>C:–Z:</b>), right-click context menu, and <b>Ctrl + Alt + L</b> Start Menu launcher.</span>
+            <span>Quick Folders, drive jumpers (<b>C:–Z:</b>), right-click context menu, and <b>Ctrl + Alt + L</b> search.</span>
           </div>
           <!-- Duplicate set for seamless continuous marquee -->
           <div class="marquee-card">
             <span class="tag">60 Hz Hit-Testing</span>
-            <span><b>WS_EX_TRANSPARENT</b> passes mouse clicks outside the live QML capsule straight through to underlying apps.</span>
+            <span><b>WS_EX_TRANSPARENT</b> passes mouse clicks outside the capsule straight through to underlying apps.</span>
           </div>
           <div class="marquee-card">
             <span class="tag">WinRT SMTC Media</span>
-            <span>Live album art, track metadata, interactive seeker, and responsive <b>WaveBars</b> audio visualizer.</span>
+            <span>Live album art, track metadata, interactive progress seeker, and responsive <b>WaveBars</b> equalizer.</span>
           </div>
           <div class="marquee-card">
             <span class="tag">Settings Switchboard</span>
-            <span>Custom dock edge selector (Top/Right), Windows autostart toggle, hotkey rebinding, and auto-hide.</span>
+            <span>Custom dock edge selector (Top/Right), Windows autostart toggle, and hotkey rebinding.</span>
           </div>
           <div class="marquee-card">
             <span class="tag">Dual-Edge Geometry</span>
-            <span>Dock as a <b>354×50 Top Hardware Notch</b> or a <b>68×198 Upright Right-Edge Dock</b> with concave fillets.</span>
+            <span>Dock as a <b>354×50 Top Hardware Notch</b> or a <b>68×198 Upright Right Dock</b> with concave fillets.</span>
           </div>
         </div>
       </section>
 
-      <!-- ================= ACETERNITY BENTO GRID (FEATURES) ================= -->
+      <!-- ================= BENTO GRID (FEATURES) ================= -->
       <section class="section-wrapper" id="features" aria-labelledby="features-title">
         <div class="section-header reveal-item">
-          <p class="section-eyebrow">Flagship Showcase Cutouts</p>
-          <h2 class="section-title" id="features-title">Pure product on obsidian canvas.</h2>
+          <p class="section-eyebrow">Architecture &amp; Surfaces</p>
+          <h2 class="section-title" id="features-title">Engineered for the display edge.</h2>
           <p class="section-desc">
-            Explore the authentic surfaces of EkPill captured live at 1:1 pixel fidelity with zero bitmap stretching. Engineered with Apple HIG damped spring physics (<code>spring: 3.8, damping: 0.32</code>) and 60 Hz Win32 click-through hit-testing.
+            Explore the authentic surfaces of EkPill captured at 1:1 pixel fidelity. Damped spring physics (<code>spring: 3.8, damping: 0.32</code>) and 60 Hz Win32 click-through hit-testing.
           </p>
         </div>
 
@@ -268,7 +268,7 @@
               <span class="bento-card-tag">Dual-Edge Architecture</span>
               <h3 class="bento-card-title">Top Notch &amp; Right Upright Dock</h3>
               <p class="bento-card-desc">
-                Flanked by GPU-antialiased <code>CurveRenderer</code> concave fillets, EkPill morphs between a <code>354×50</code> top hardware notch and a <code>68×198</code> upright vertical dock with zero sideways numerals. 60 Hz <code>WS_EX_TRANSPARENT</code> passes clicks straight through.
+                Flanked by GPU-antialiased <code>CurveRenderer</code> concave fillets, EkPill morphs between a <code>354×50</code> top notch and a <code>68×198</code> upright vertical dock with zero sideways numerals. 60 Hz <code>WS_EX_TRANSPARENT</code> passes clicks straight through.
               </p>
             </div>
             <div class="bento-preview-box bento-image-preview">
@@ -310,7 +310,7 @@
               <span class="bento-card-tag">WinRT SMTC Session</span>
               <h3 class="bento-card-title">Now Playing Media Studio</h3>
               <p class="bento-card-desc">
-                Live track metadata, high-DPI album art, interactive scrubber seeker, and 4-bar reactive WaveBars equalizer.
+                Live track metadata, high-DPI album art, interactive progress seeker, and 4-bar reactive WaveBars equalizer.
               </p>
             </div>
             <div class="bento-preview-box bento-image-preview">
@@ -390,13 +390,13 @@
         </div>
       </section>
 
-      <!-- ================= ACETERNITY INTERACTIVE SCREEN RECORDING VIDEO PLAYER STUDIO ================= -->
+      <!-- ================= INTERACTIVE SCREEN RECORDING VIDEO PLAYER STUDIO ================= -->
       <section class="section-wrapper" id="screen-recording" aria-labelledby="screen-recording-title">
         <div class="section-header reveal-item">
-          <p class="section-eyebrow">Real Product Walkthrough</p>
-          <h2 class="section-title" id="screen-recording-title">Experience EkPill in real time.</h2>
+          <p class="section-eyebrow">Walkthrough</p>
+          <h2 class="section-title" id="screen-recording-title">Experience EkPill in motion.</h2>
           <p class="section-desc">
-            Watch the high-definition interactive screen recording below. Switch across all 5 choreographed chapters, scrub the timeline, or toggle playback speed to inspect how every QML surface morphs.
+            Watch the high-definition interactive screen recording below. Switch across all 5 choreographed chapters, scrub the timeline, or inspect how each surface morphs.
           </p>
         </div>
 
@@ -513,7 +513,7 @@
                   style="display: none"
                 />
 
-                <!-- Live Screencast Animated Mouse Cursor -->
+                <!-- Live Screencast Mouse Cursor (Kept for compatibility) -->
                 <div class="screencast-cursor" id="screencast-cursor">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <path d="M3 3l7 18 3-7 7-3L3 3z" fill="#ffffff" stroke="#1d1d1f" stroke-width="1.5" />
@@ -542,13 +542,13 @@
         </div>
       </section>
 
-      <!-- ================= 3D PHYSICAL SHORTCUT STATION ================= -->
+      <!-- ================= PHYSICAL SHORTCUT STATION ================= -->
       <section class="section-wrapper" id="shortcuts" aria-labelledby="shortcuts-title">
         <div class="section-header reveal-item">
-          <p class="section-eyebrow">Physical Shortcut &amp; Trigger Station</p>
+          <p class="section-eyebrow">Shortcuts &amp; Gestures</p>
           <h2 class="section-title" id="shortcuts-title">Sub-10ms tactile triggers.</h2>
           <p class="section-desc">
-            Every interaction in EkPill is engineered for instant muscle memory. Click any row or press the shortcut on your keyboard to depress the 3D mechanical keycaps and preview the target surface.
+            Every interaction in EkPill is engineered for instant muscle memory. Click any row or press the shortcut on your keyboard to test the response.
           </p>
         </div>
 
@@ -655,10 +655,10 @@
       <!-- ================= FEATURE COMPARISON MATRIX ================= -->
       <section class="section-wrapper" id="compare" aria-labelledby="compare-title">
         <div class="section-header reveal-item">
-          <p class="section-eyebrow">Architectural Benchmark</p>
-          <h2 class="section-title" id="compare-title">Why EkPill replaces four separate utilities.</h2>
+          <p class="section-eyebrow">Benchmark</p>
+          <h2 class="section-title" id="compare-title">Native desktop engineering.</h2>
           <p class="section-desc">
-            See how EkPill v1.3 compares to standard Windows Taskbar flyouts, Rainmeter skins, and generic dock clones across geometry, audio routing, and native tooling.
+            How EkPill v1.3 compares to standard Windows Taskbar flyouts, desktop skins, and dock utilities across geometry, audio routing, and system integration.
           </p>
         </div>
 
@@ -726,7 +726,7 @@
                 <tr>
                   <td class="matrix-feat-col">
                     WinRT SMTC Media + Album Art + Seeker
-                    <small>Live metadata from Spotify/Chrome/VLC with 7-bar reactive EQ</small>
+                    <small>Live metadata from Spotify/Chrome/VLC with reactive equalizer</small>
                   </td>
                   <td class="matrix-ekpill-col">
                     <span class="matrix-yes">
@@ -789,13 +789,13 @@
         </div>
       </section>
 
-      <!-- ================= RETINA DARK GALLERY ================= -->
+      <!-- ================= RETINA VISUAL GALLERY ================= -->
       <section class="section-wrapper" id="gallery" aria-labelledby="gallery-title">
         <div class="section-header reveal-item">
-          <p class="section-eyebrow">2x Retina Visual Gallery</p>
+          <p class="section-eyebrow">Visual Gallery</p>
           <h2 class="section-title" id="gallery-title">Every surface captured live.</h2>
           <p class="section-desc">
-            Click any card below to inspect the full-resolution Retina capture in the interactive Lightbox.
+            Unscaled 1:1 captures from native Qt6 QML rendering. Click any surface to inspect in the interactive Lightbox.
           </p>
 
           <div class="gallery-controls-bar">
@@ -971,7 +971,7 @@
           <p class="section-eyebrow">Knowledge Base</p>
           <h2 class="section-title" id="faq-title">Frequently Asked Questions</h2>
           <p class="section-desc">
-            Everything you need to know about EkPill's 60 Hz click-through windowing, WinRT SMTC audio integration, desktop utilities, and privacy.
+            Technical details on 60 Hz hit-testing, WinRT SMTC media integration, dock geometry, and offline privacy.
           </p>
 
           <div class="faq-filter-pills">
@@ -989,7 +989,7 @@
               <span class="faq-toggle-icon">+</span>
             </summary>
             <p class="faq-body-text">
-              EkPill creates a frameless always-on-top Qt6 QQuickView and runs a 16 ms (60 Hz) Win32 cursor hit-test loop. When your cursor is outside the live QML capsule's animated bounding box, EkPill applies WS_EX_TRANSPARENT | WS_EX_LAYERED via SetWindowLongW, allowing clicks and scrolls to pass straight through to underlying desktop apps with zero latency.
+              EkPill creates a frameless always-on-top Qt6 QQuickView and runs a 16 ms (60 Hz) Win32 cursor hit-test loop. When your cursor is outside the live QML capsule bounding box, EkPill applies WS_EX_TRANSPARENT | WS_EX_LAYERED via SetWindowLongW, allowing clicks and scrolls to pass straight through to underlying desktop apps with zero latency.
             </p>
           </details>
 
@@ -1056,7 +1056,7 @@
           </div>
           <nav class="footer-nav" aria-label="Footer Navigation">
             <a href="#features">Features</a>
-            <a href="#screen-recording">Screen Recording</a>
+            <a href="#screen-recording">Walkthrough</a>
             <a href="#shortcuts">Shortcuts</a>
             <a href="#compare">Comparison</a>
             <a href="#download">Download</a>
@@ -1065,7 +1065,7 @@
           </nav>
         </div>
         <div class="footer-bottom-row">
-          <span>© <span data-year>2026</span> EkPill. Engineered for Windows 10 &amp; 11. 100% Offline &amp; Open Source (MIT).</span>
+          <span>&copy; <span data-year>2026</span> EkPill. Engineered for Windows 10 &amp; 11. 100% Offline &amp; Open Source (MIT).</span>
           <span>Windows is a trademark of Microsoft Corporation. Built with Qt6 QML, PySide6, WinRT SMTC, and Win32.</span>
         </div>
       </div>
@@ -1073,9 +1073,9 @@
 
     <!-- ================= RETINA LIGHTBOX MODAL WITH NAVIGATION ================= -->
     <div class="lightbox-modal" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Screenshot preview">
-      <button class="lightbox-close-btn" aria-label="Close lightbox">×</button>
-      <button class="lightbox-nav-btn prev" id="lb-prev" aria-label="Previous screenshot">‹</button>
-      <button class="lightbox-nav-btn next" id="lb-next" aria-label="Next screenshot">›</button>
+      <button class="lightbox-close-btn" aria-label="Close lightbox">&times;</button>
+      <button class="lightbox-nav-btn prev" id="lb-prev" aria-label="Previous screenshot">&lsaquo;</button>
+      <button class="lightbox-nav-btn next" id="lb-next" aria-label="Next screenshot">&rsaquo;</button>
       <div class="lightbox-content">
         <img id="lb-image" src="./shots/capsule-top-dark.png" alt="Enlarged screenshot" />
         <div class="lightbox-caption" id="lb-caption"></div>
