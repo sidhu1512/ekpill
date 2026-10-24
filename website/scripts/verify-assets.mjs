@@ -42,14 +42,12 @@ console.log("====================================================\n");
 // 1. Verify Flagship Showcase Images & Dual-Format Recordings in docs/showcase & website/public/showcase
 const showcasePngs = [
   "hero_dark.png",
-  "hero_light.png",
   "bento_capsule_morph.png",
   "bento_quick_settings.png",
   "bento_audio_media.png",
   "bento_files_hub.png",
   "bento_launcher_hotkeys.png",
   "bento_settings_power.png",
-  "bento_screen_recorder.png",
 ];
 
 const showcaseDemos = [
@@ -58,8 +56,12 @@ const showcaseDemos = [
   "demo_audio_media",
   "demo_files_launcher",
   "demo_settings_power",
-  "demo_recorder_radios",
 ];
+
+const allowedShowcaseFiles = new Set([
+  ...showcasePngs,
+  ...showcaseDemos.flatMap((d) => [`${d}.webm`, `${d}.gif`]),
+]);
 
 for (const baseDir of [
   path.join(repoRoot, "docs", "showcase"),
@@ -72,9 +74,16 @@ for (const baseDir of [
     checkFileNonEmpty(path.join(baseDir, `${demo}.webm`), 10240);
     checkFileNonEmpty(path.join(baseDir, `${demo}.gif`), 10240);
   }
+  // Enforce zero unauthorized or obsolete files in showcase directories
+  const actualFiles = fs.readdirSync(baseDir);
+  for (const file of actualFiles) {
+    if (!allowedShowcaseFiles.has(file)) {
+      fail(`Found unauthorized/obsolete file in ${path.relative(repoRoot, baseDir)}: ${file}`);
+    }
+  }
 }
 
-// 2. Verify Paired Light/Dark Gallery Shots in website/public/shots
+// 2. Verify Authentic Dark Utility Surfaces in website/public/shots
 const galleryBases = [
   "capsule-top",
   "quick-settings",
@@ -84,17 +93,40 @@ const galleryBases = [
   "files-hub",
   "app-launcher",
   "power-menu",
-  "audio-mixer",
-  "recorder-settings",
 ];
 
+const shotsDir = path.join(websiteDir, "public", "shots");
 for (const base of galleryBases) {
-  checkFileNonEmpty(path.join(websiteDir, "public", "shots", `${base}-light.png`), 5120);
-  checkFileNonEmpty(path.join(websiteDir, "public", "shots", `${base}-dark.png`), 5120);
+  checkFileNonEmpty(path.join(shotsDir, `${base}-dark.png`), 5120);
 }
-checkFileNonEmpty(path.join(websiteDir, "public", "shots", "bubble.png"), 1024);
-checkFileNonEmpty(path.join(websiteDir, "public", "shots", "pip-light.png"), 1024);
-checkFileNonEmpty(path.join(websiteDir, "public", "shots", "pip-dark.png"), 1024);
+checkFileNonEmpty(path.join(shotsDir, "bubble.png"), 1024);
+checkFileNonEmpty(path.join(shotsDir, "pip-dark.png"), 1024);
+
+// Enforce zero unauthorized or obsolete files in website/public/shots
+const allowedShotsFiles = new Set([
+  ...galleryBases.map((b) => `${b}-dark.png`),
+  "bubble.png",
+  "pip-dark.png",
+]);
+const actualShots = fs.readdirSync(shotsDir);
+for (const file of actualShots) {
+  if (!allowedShotsFiles.has(file)) {
+    fail(`Found unauthorized/obsolete file in website/public/shots: ${file}`);
+  }
+}
+
+// 2b. Verify Root Website Public Assets
+checkFileNonEmpty(path.join(websiteDir, "public", "icon.png"), 1024);
+checkFileNonEmpty(path.join(websiteDir, "public", "favicon.ico"), 1024);
+
+// 2c. Verify No Dump / Selftest Files Left in ekpill
+const ekpillDir = path.join(repoRoot, "ekpill");
+const ekpillFiles = fs.readdirSync(ekpillDir);
+for (const f of ekpillFiles) {
+  if (f.startsWith("ekpill_selftest_")) {
+    fail(`Found unexpected selftest dump file: ${f}`);
+  }
+}
 
 // 3. Parse README.md and verify all local relative image/doc links
 const readmePath = path.join(repoRoot, "README.md");

@@ -260,14 +260,12 @@ def generate_showcase_images():
     
     showcase_map = {
         "hero_dark.png": hero_dark,
-        "hero_light.png": hero_light,
         "bento_capsule_morph.png": bento_morph,
         "bento_quick_settings.png": bento_qs,
         "bento_audio_media.png": bento_am,
         "bento_files_hub.png": bento_files,
         "bento_launcher_hotkeys.png": bento_launch,
         "bento_settings_power.png": bento_sp,
-        "bento_screen_recorder.png": bento_sp,  # Legacy alias to ensure zero breakages
     }
     
     for name, img in showcase_map.items():
@@ -290,29 +288,26 @@ def generate_shots():
         ("quick-settings", "ekpill_selftest_quick.png"),
         ("media-player", "ekpill_selftest_top_media.png"),
         ("settings-switchboard", "ekpill_selftest_top_settings.png"),
-        ("audio-mixer", "ekpill_selftest_top_settings.png"),      # Legacy alias to authentic settings
         ("wifi-bluetooth", "ekpill_selftest_quick.png"),
         ("files-hub", "ekpill_selftest_top_files.png"),
         ("app-launcher", "ekpill_selftest_top_launcher.png"),
         ("power-menu", "ekpill_selftest_top_power.png"),
-        ("recorder-settings", "ekpill_selftest_top_power.png"),    # Legacy alias to authentic power
     ]
     
     for base_name, src in shot_defs:
         panel = get_cropped_panel(src)
         shot = make_cutout(panel, pad_x=32, pad_y=24)
-        for suffix in ["-dark.png", "-light.png"]:
-            out_name = f"{base_name}{suffix}"
-            out_p = os.path.join(WEB_SHOTS, out_name)
-            safe_save(shot, out_p, format="PNG", optimize=False)
-            for b_dir in BRAIN_REVIEWS:
-                safe_save(shot, os.path.join(b_dir, out_name), format="PNG", optimize=False)
-            print(f"  [SAVED] shots/{out_name} ({os.path.getsize(out_p)/1024:.1f} KB)")
+        out_name = f"{base_name}-dark.png"
+        out_p = os.path.join(WEB_SHOTS, out_name)
+        safe_save(shot, out_p, format="PNG", optimize=False)
+        for b_dir in BRAIN_REVIEWS:
+            safe_save(shot, os.path.join(b_dir, out_name), format="PNG", optimize=False)
+        print(f"  [SAVED] shots/{out_name} ({os.path.getsize(out_p)/1024:.1f} KB)")
             
     # Floating capsule icons
     p_top = get_cropped_panel("ekpill_selftest_top.png")
     bubble = make_cutout(p_top, pad_x=12, pad_y=8)
-    for name in ["bubble.png", "pip-dark.png", "pip-light.png"]:
+    for name in ["bubble.png", "pip-dark.png"]:
         p1 = os.path.join(WEB_SHOTS, name)
         safe_save(bubble, p1, format="PNG", optimize=False)
         for b_dir in BRAIN_REVIEWS:
