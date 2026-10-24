@@ -1,55 +1,55 @@
 /* ==========================================================================
-   EKPILL — OBSIDIAN DARK THEME DESIGN SYSTEM (APPLE HIG PHYSICAL MOTION)
+   EKPILL — PRISTINE APPLE LIGHT THEME DESIGN SYSTEM
    Design Foundation: Apple HIG + Emil Kowalski Fluid Design Standards
-   Palette: Obsidian (#07090e), Midnight (#0d1117), Slate Surface (#161b22)
-   Hairlines: #1e2638 · Text: #f0f6fc / #c9d1d9 / #8b949e · Accent: #38bdf8
-   Strict Dark Mode · Zero Stretching · Razor-Sharp 1:1 Pixel Presentation
+   Palette: Pure White (#ffffff), Warm Silver (#fbfbfd), Platinum (#f5f5f7)
+   Hairlines: #e5e5ea · Text: #1d1d1f / #515154 / #86868b · Accent: #0071e3
+   Zero Dark Neon · Zero Blinking Lights · Razor-Sharp Retina Presentation
    ========================================================================== */
 
 :root {
-  /* Color System — Pure Obsidian Dark Palette */
-  --bg: #07090e;
-  --bg-subtle: #0b0e14;
-  --bg-platinum: #11151f;
-  --bg-platinum-hover: #171d2b;
-  --bg-card: #0d1117;
-  --bg-card-subtle: #121720;
-  --bg-card-hover: #161c28;
-  --bg-frosted: rgba(13, 17, 23, 0.85);
-  --bg-frosted-heavy: rgba(11, 14, 20, 0.95);
-  --bg-surface: #11151f;
-  --bg-surface-elevated: #161c28;
+  /* Color System — Pure Apple Light Palette */
+  --bg: #ffffff;
+  --bg-subtle: #fbfbfd;
+  --bg-platinum: #f5f5f7;
+  --bg-platinum-hover: #e8e8ed;
+  --bg-card: #ffffff;
+  --bg-card-subtle: #fbfbfd;
+  --bg-card-hover: #f9f9fb;
+  --bg-frosted: rgba(255, 255, 255, 0.82);
+  --bg-frosted-heavy: rgba(255, 255, 255, 0.94);
+  --bg-surface: #f5f5f7;
+  --bg-surface-elevated: #ffffff;
 
   /* Borders & Hairlines */
-  --border: rgba(255, 255, 255, 0.08);
-  --border-subtle: rgba(255, 255, 255, 0.05);
-  --border-hover: rgba(255, 255, 255, 0.16);
-  --border-active: #38bdf8;
-  --border-hairline: #1e2638;
-  --border-hairline-subtle: #182030;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-subtle: rgba(0, 0, 0, 0.05);
+  --border-hover: rgba(0, 0, 0, 0.16);
+  --border-active: #0071e3;
+  --border-hairline: #e5e5ea;
+  --border-hairline-subtle: #f0f0f2;
 
   /* Typography (Apple Human Interface Guidelines) */
-  --text-primary: #f0f6fc;
-  --text-secondary: #c9d1d9;
-  --text-muted: #8b949e;
-  --text-faint: #484f58;
+  --text-primary: #1d1d1f;
+  --text-secondary: #515154;
+  --text-muted: #86868b;
+  --text-faint: #aeaeb2;
 
   /* Apple Accents & System Tints */
-  --accent: #38bdf8;
-  --accent-hover: #60a5fa;
-  --accent-active: #2563eb;
-  --accent-subtle: rgba(56, 189, 248, 0.1);
-  --accent-cyan: #38bdf8;
-  --accent-indigo: #818cf8;
-  --success: #34d399;
-  --success-bg: rgba(52, 211, 153, 0.1);
-  --success-border: rgba(52, 211, 153, 0.25);
-  --warning: #fbbf24;
-  --warning-bg: rgba(251, 191, 36, 0.1);
-  --warning-border: rgba(251, 191, 36, 0.25);
-  --danger: #f87171;
-  --danger-bg: rgba(248, 113, 113, 0.1);
-  --danger-border: rgba(248, 113, 113, 0.25);
+  --accent: #0071e3;
+  --accent-hover: #0077ed;
+  --accent-active: #0062c4;
+  --accent-subtle: #e8f2ff;
+  --accent-cyan: #0284c7;
+  --accent-indigo: #4f46e5;
+  --success: #15803d;
+  --success-bg: #ecfdf5;
+  --success-border: #a7f3d0;
+  --warning: #b45309;
+  --warning-bg: #fffbeb;
+  --warning-border: #fde68a;
+  --danger: #dc2626;
+  --danger-bg: #fef2f2;
+  --danger-border: #fecaca;
 
   /* Geometry & Radii */
   --radius-xs: 6px;
@@ -533,8 +533,8 @@ kbd {
    ========================================================================== */
 .hero-stage {
   position: relative;
-  max-width: 640px;
-  margin: 3rem auto 0;
+  max-width: 980px;
+  margin: 3.5rem auto 0;
 }
 
 .hero-float-bubble-wrap {
@@ -558,7 +558,7 @@ kbd {
   width: 220px;
   height: auto;
   border-radius: var(--radius-pill);
-  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.4)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.22)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.08));
   display: block;
 }
 
@@ -578,23 +578,23 @@ kbd {
   width: 280px;
   height: auto;
   border-radius: var(--radius-pill);
-  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.4)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.22)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.08));
   display: block;
 }
 
-/* Windows 11 App Obsidian Frame */
+/* Windows 11 App Light Frame */
 .app-frame {
   position: relative;
-  background: var(--bg-card);
+  background: #ffffff;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-hairline);
-  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  box-shadow: var(--shadow-app-frame);
   overflow: hidden;
   transition: box-shadow 0.3s ease;
 }
 
 .app-frame:hover {
-  box-shadow: 0 40px 96px -24px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(56, 189, 248, 0.18);
+  box-shadow: 0 40px 96px -24px rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
 
 .app-titlebar {
@@ -602,7 +602,7 @@ kbd {
   align-items: center;
   justify-content: space-between;
   padding: 0.75rem 1.1rem;
-  background: var(--bg-subtle);
+  background: var(--bg-platinum);
   border-bottom: 1px solid var(--border-hairline);
   user-select: none;
 }
@@ -625,8 +625,8 @@ kbd {
   font-weight: 600;
   padding: 0.15rem 0.5rem;
   border-radius: var(--radius-pill);
-  background: var(--bg-card);
-  color: var(--accent);
+  background: #ffffff;
+  color: var(--text-secondary);
   border: 1px solid var(--border-hairline);
 }
 
@@ -652,7 +652,7 @@ kbd {
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  background: #3b4252;
+  background: #d1d1d6;
 }
 .app-win-btn.close { background: #ff5f57; }
 .app-win-btn.minimize { background: #febc2e; }
@@ -660,34 +660,28 @@ kbd {
 
 .app-viewport {
   position: relative;
-  background: var(--bg);
+  background: var(--bg-platinum);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.75rem 1.25rem;
+  padding: 2.2rem 1.5rem;
   overflow: hidden;
 }
 
 .app-viewport-inner {
-  max-width: 520px;
+  max-width: 440px;
   width: 100%;
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06);
-  background: #0b0e14;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.14), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .app-viewport-inner img {
-  max-width: 100%;
-  width: auto;
+  width: 100%;
   height: auto;
   display: block;
-  object-fit: contain;
-  margin: 0 auto;
 }
 
 .app-live-status-bar {
@@ -696,12 +690,11 @@ kbd {
   justify-content: center;
   gap: 0.5rem;
   padding: 0.45rem 0.8rem;
-  background: rgba(18, 23, 34, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border-top: 1px solid var(--border-hairline);
   font-size: 0.74rem;
   color: var(--text-secondary);
-  width: 100%;
 }
 
 .status-indicator {
@@ -1388,7 +1381,7 @@ kbd {
    ACETERNITY INTERACTIVE SCREEN RECORDING VIDEO STUDIO
    ========================================================================== */
 .video-tour-box {
-  background: var(--bg-card);
+  background: #ffffff;
   border-radius: var(--radius-xl);
   border: 1px solid var(--border-hairline);
   box-shadow: var(--shadow-lg);
@@ -1398,7 +1391,7 @@ kbd {
 .video-chapters-bar {
   display: flex;
   border-bottom: 1px solid var(--border-hairline);
-  background: var(--bg-subtle);
+  background: var(--bg-platinum);
   overflow-x: auto;
 }
 
@@ -1415,11 +1408,11 @@ kbd {
 }
 
 .video-chapter-tab:hover {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(0, 0, 0, 0.03);
 }
 
 .video-chapter-tab.active {
-  background: var(--bg-card);
+  background: #ffffff;
 }
 
 .chapter-time {
@@ -1499,7 +1492,7 @@ kbd {
 }
 
 .video-player-hud {
-  background: var(--bg-subtle);
+  background: var(--bg-platinum);
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-md);
   padding: 1rem;
@@ -1515,7 +1508,7 @@ kbd {
 .video-scrubber-bar {
   flex: 1;
   height: 6px;
-  background: #252d3d;
+  background: #d1d1d6;
   border-radius: 3px;
   position: relative;
   cursor: pointer;
@@ -1541,7 +1534,7 @@ kbd {
   background: #ffffff;
   border: 2px solid var(--accent);
   transform: translate(-50%, -50%);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .video-time-display {
@@ -1559,7 +1552,7 @@ kbd {
 /* Video Display Frame */
 .video-display-frame {
   position: relative;
-  background: var(--bg);
+  background: var(--bg-platinum);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-hairline);
   padding: 1.5rem;
@@ -1569,41 +1562,37 @@ kbd {
 }
 
 .video-screen-inner {
-  max-width: 540px;
+  max-width: 580px;
   width: 100%;
+  aspect-ratio: 16 / 10;
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 20px 48px -8px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
-  background: #0b0e14;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 280px;
+  box-shadow: 0 20px 48px -8px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.1);
+  background: #0d0f17;
 }
 
 .video-screen-inner video {
-  max-width: 100%;
-  max-height: 400px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
   z-index: 1;
 }
 
 .video-screen-inner img {
-  max-width: 100%;
-  max-height: 400px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
   z-index: 0;
 }
 
 .screencast-cursor {
-  display: none !important;
   position: absolute;
   top: 30%;
   left: 45%;
@@ -2015,25 +2004,23 @@ kbd {
 .gallery-cards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .gallery-card {
   border-radius: var(--radius-lg);
-  background: var(--bg-card);
+  background: #ffffff;
   border: 1px solid var(--border-hairline);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   cursor: pointer;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
-  display: flex;
-  flex-direction: column;
 }
 
 .gallery-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.5);
-  border-color: rgba(56, 189, 248, 0.3);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(0, 113, 227, 0.3);
 }
 
 .gallery-card:active {
@@ -2041,34 +2028,27 @@ kbd {
 }
 
 .gallery-card-inner {
-  background: var(--bg);
-  padding: 1.25rem;
+  background: var(--bg-platinum);
+  padding: 1.25rem 1.25rem 0.5rem;
   display: flex;
-  align-items: center;
   justify-content: center;
-  min-height: 160px;
-  flex: 1;
 }
 
 .gallery-card-inner img {
-  max-width: 100%;
-  max-height: 140px;
-  width: auto;
+  width: 100%;
   height: auto;
-  object-fit: contain;
-  margin: 0 auto;
   border-radius: var(--radius-sm);
-  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease;
 }
 
 .gallery-card:hover .gallery-card-inner img {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 .gallery-card-caption {
-  padding: 0.9rem 1.15rem;
-  background: var(--bg-card);
+  padding: 1rem 1.25rem;
+  background: #ffffff;
   border-top: 1px solid var(--border-hairline);
 }
 
@@ -2088,7 +2068,7 @@ kbd {
    DOWNLOAD & CRYPTOGRAPHIC VERIFICATION
    ========================================================================== */
 .download-box {
-  background: var(--bg-card);
+  background: #ffffff;
   border-radius: var(--radius-xl);
   border: 1px solid var(--border-hairline);
   box-shadow: var(--shadow-lg);
@@ -2353,7 +2333,7 @@ kbd {
 .lightbox-modal {
   position: fixed;
   inset: 0;
-  background: rgba(7, 9, 14, 0.95);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   z-index: 1000;
@@ -2374,7 +2354,7 @@ kbd {
   height: 44px;
   border-radius: 50%;
   border: 1px solid var(--border-hairline);
-  background: var(--bg-card);
+  background: #ffffff;
   color: var(--text-primary);
   font-size: 1.5rem;
   cursor: pointer;
@@ -2397,7 +2377,7 @@ kbd {
   height: 48px;
   border-radius: 50%;
   border: 1px solid var(--border-hairline);
-  background: var(--bg-card);
+  background: #ffffff;
   color: var(--text-primary);
   font-size: 1.8rem;
   cursor: pointer;
@@ -2423,13 +2403,13 @@ kbd {
 }
 
 .lightbox-content img {
-  max-width: 100%;
-  width: auto;
+  max-width: 460px;
+  width: 100%;
   max-height: 82vh;
   object-fit: contain;
   border-radius: var(--radius-md);
-  box-shadow: 0 32px 80px -16px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08);
-  background: transparent;
+  box-shadow: 0 32px 80px -16px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
 }
 
 .lightbox-caption {

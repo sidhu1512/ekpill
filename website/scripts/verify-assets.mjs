@@ -48,7 +48,6 @@ const showcasePngs = [
   "bento_audio_media.png",
   "bento_files_hub.png",
   "bento_launcher_hotkeys.png",
-  "bento_settings_power.png",
   "bento_screen_recorder.png",
 ];
 
@@ -57,7 +56,6 @@ const showcaseDemos = [
   "demo_capsule_morph",
   "demo_audio_media",
   "demo_files_launcher",
-  "demo_settings_power",
   "demo_recorder_radios",
 ];
 
@@ -74,17 +72,15 @@ for (const baseDir of [
   }
 }
 
-// 2. Verify Paired Light/Dark Gallery Shots in website/public/shots
+// 2. Verify 16 Paired Light/Dark Gallery Shots in website/public/shots
 const galleryBases = [
   "capsule-top",
   "quick-settings",
   "media-player",
-  "settings-switchboard",
+  "audio-mixer",
   "wifi-bluetooth",
   "files-hub",
   "app-launcher",
-  "power-menu",
-  "audio-mixer",
   "recorder-settings",
 ];
 

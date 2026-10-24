@@ -9,8 +9,6 @@ ekpill/Output/
 ekpill/live_verification_shots/
 ekpill/ekpill_extra_*.png
 ekpill/ekpill_extra_*.json
-ekpill_selftest_*
-review_showcase/
 ekpill/generate_showcase_media.py
 
 # Node & Vite build artifacts

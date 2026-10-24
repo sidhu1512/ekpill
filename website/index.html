@@ -6,15 +6,15 @@
     <title>EkPill — Dynamic Island &amp; Hardware-Notch Utility Capsule for Windows 10 &amp; 11</title>
     <meta
       name="description"
-      content="EkPill transforms the top or right edge of your Windows 10/11 display into a fluid, spring-physics obsidian capsule housing Quick Settings, WinRT SMTC Media, Native Files Hub, Start Menu App Launcher, Settings Switchboard, and Safe Power Menu."
+      content="EkPill transforms the top or right edge of your Windows 10/11 display into a fluid, spring-physics obsidian capsule housing Quick Settings, WinRT SMTC Media, WASAPI Per-App Audio Mixer, Files Hub, App Launcher, and 60 FPS Screen Recorder."
     />
     <meta property="og:title" content="EkPill — Hardware-Notch Dynamic Capsule for Windows" />
     <meta
       property="og:description"
-      content="One obsidian capsule at the screen edge. Native utilities inside. Built with Qt6 QML, Win32 WS_EX_TRANSPARENT hit-testing, WinRT SMTC, Shell32, and Netsh."
+      content="One obsidian capsule at the screen edge. Nine native utilities inside. Built with Qt6 QML, Win32 WS_EX_TRANSPARENT hit-testing, WinRT SMTC, WASAPI, and FFmpeg."
     />
-    <meta property="og:image" content="./shots/capsule-top-dark.png" />
-    <meta name="theme-color" content="#07090e" />
+    <meta property="og:image" content="./shots/capsule-top-light.png" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="./icon.png" />
     <link rel="apple-touch-icon" href="./icon.png" />
@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
-    <!-- Obsidian Ambient Mesh -->
+    <!-- Apple Pure Light Ambient Mesh -->
     <div class="apple-bg-mesh" aria-hidden="true"></div>
 
     <a class="skip-link" href="#main">Skip to main content</a>
@@ -97,8 +97,8 @@
 
           <p class="hero-subtitle reveal-item revealed">
             EkPill docks seamlessly to the top or right edge of your Windows 10/11 monitor with hardware-notch concave fillets and
-            <b>60 Hz click-through hit-testing</b>. Hover or click to morph into Quick Settings, WinRT SMTC Media,
-            Native Files Hub, Instant App Launcher, Settings Switchboard, and Safe Power Menu.
+            <b>60 Hz click-through hit-testing</b>. Hover or click to morph into Quick Settings, WinRT SMTC Media, WASAPI Per-App Audio Mixer,
+            Native Files Hub, Instant App Launcher, and 60 FPS Screen Recorder.
           </p>
 
           <div class="hero-cta-group reveal-item revealed">
@@ -140,7 +140,7 @@
           </div>
         </div>
 
-        <!-- Obsidian Hero Stage -->
+        <!-- Aceternity Light Hero Stage -->
         <div class="hero-stage reveal-item revealed" id="hero-stage">
           <!-- Floating Collapsed Top-Edge Hardware Notch -->
           <div class="hero-float-bubble-wrap" id="hero-bubble-wrap" title="Click to test capsule interaction">
@@ -154,13 +154,13 @@
             />
           </div>
 
-          <!-- Floating Dynamic Status Capsule -->
-          <div class="hero-float-pip-wrap" id="hero-pip-wrap" title="EkPill live hardware-notch status capsule">
+          <!-- Floating Active Recording Capsule -->
+          <div class="hero-float-pip-wrap" id="hero-pip-wrap" title="EkPill active 60 FPS recording capsule">
             <img
               class="hero-float-pip"
               id="hero-pip"
-              src="./shots/pip-dark.png"
-              alt="EkPill live hardware-notch status capsule"
+              src="./shots/pip-light.png"
+              alt="EkPill active 60 FPS recording capsule with live timer"
               width="280"
               height="30"
             />
@@ -188,10 +188,10 @@
               <div class="app-viewport-inner">
                 <img
                   id="hero-app-image"
-                  src="./showcase/hero_dark.png"
-                  alt="EkPill Hardware-Notch Dynamic Capsule and Quick Settings Deck"
-                  width="760"
-                  height="353"
+                  src="./shots/capsule-top-light.png"
+                  alt="EkPill Hardware-Notch Dynamic Capsule overview showing top and right edge orientation"
+                  width="900"
+                  height="620"
                 />
                 <!-- Live status bar overlay -->
                 <div class="app-live-status-bar">
@@ -213,23 +213,23 @@
           </div>
           <div class="marquee-card">
             <span class="tag">WinRT SMTC Media</span>
-            <span>Live album art, track metadata, interactive seeker, and responsive <b>WaveBars</b> audio visualizer.</span>
+            <span>Live album art, track metadata, interactive seeker, and a 60 FPS <b>7-bar WaveBars</b> audio equalizer.</span>
           </div>
           <div class="marquee-card">
-            <span class="tag">Settings Switchboard</span>
-            <span>Custom dock edge selector (Top/Right), Windows autostart toggle, hotkey rebinding, and auto-hide.</span>
+            <span class="tag">WASAPI Audio Mixer</span>
+            <span>Individual volume sliders and mute toggles for <b>Spotify, Chrome, Discord</b>, and every active audio stream.</span>
           </div>
           <div class="marquee-card">
             <span class="tag">Dual-Edge Geometry</span>
-            <span>Dock as a <b>354×50 Top Hardware Notch</b> or a <b>68×198 Upright Right-Edge Dock</b> with concave fillets.</span>
+            <span>Dock as a <b>332×50 Top Hardware Notch</b> or a <b>58×178 Upright Right-Edge Dock</b> with concave fillets.</span>
           </div>
           <div class="marquee-card">
-            <span class="tag">Safe Power Menu</span>
-            <span>Two-step safe power controls for <b>Lock, Sleep, Sign out, Restart, and Shut Down</b>.</span>
+            <span class="tag">60 FPS Recorder</span>
+            <span>Crash-safe <b>FFmpeg .mkv</b> desktop capture with pause/resume, mic audio, and automatic <b>+faststart .mp4</b> remux.</span>
           </div>
           <div class="marquee-card">
             <span class="tag">Files &amp; Launcher</span>
-            <span>Quick Folders, drive jumpers (<b>C:–Z:</b>), right-click context menu, and <b>Ctrl + Alt + L</b> Start Menu launcher.</span>
+            <span>7 Quick Folders, drive jumpers (<b>C:–Z:</b>), right-click context menu, and <b>Ctrl + Alt + L</b> Start Menu launcher.</span>
           </div>
           <!-- Duplicate set for seamless continuous marquee -->
           <div class="marquee-card">
@@ -238,15 +238,15 @@
           </div>
           <div class="marquee-card">
             <span class="tag">WinRT SMTC Media</span>
-            <span>Live album art, track metadata, interactive seeker, and responsive <b>WaveBars</b> audio visualizer.</span>
+            <span>Live album art, track metadata, interactive seeker, and a 60 FPS <b>7-bar WaveBars</b> audio equalizer.</span>
           </div>
           <div class="marquee-card">
-            <span class="tag">Settings Switchboard</span>
-            <span>Custom dock edge selector (Top/Right), Windows autostart toggle, hotkey rebinding, and auto-hide.</span>
+            <span class="tag">WASAPI Audio Mixer</span>
+            <span>Individual volume sliders and mute toggles for <b>Spotify, Chrome, Discord</b>, and every active audio stream.</span>
           </div>
           <div class="marquee-card">
             <span class="tag">Dual-Edge Geometry</span>
-            <span>Dock as a <b>354×50 Top Hardware Notch</b> or a <b>68×198 Upright Right-Edge Dock</b> with concave fillets.</span>
+            <span>Dock as a <b>332×50 Top Hardware Notch</b> or a <b>58×178 Upright Right-Edge Dock</b> with concave fillets.</span>
           </div>
         </div>
       </section>
@@ -269,8 +269,8 @@
               <span class="bento-card-tag">Qt6 QML + Win32 Hit-Testing</span>
               <h3 class="bento-card-title">Bilateral Spring Morphing &amp; 60 Hz Click-Through</h3>
               <p class="bento-card-desc">
-                Flanked by GPU-antialiased <code>CurveRenderer</code> concave ears, EkPill morphs smoothly between a <code>354×50</code> top notch,
-                a <code>68×198</code> upright vertical dock, and expanded utility panels while passing outside clicks directly to Windows.
+                Flanked by GPU-antialiased <code>CurveRenderer</code> concave ears, EkPill morphs smoothly between a <code>332×50</code> top notch,
+                a <code>58×178</code> upright vertical dock, and 9 expanded utility panels while passing outside clicks directly to Windows.
               </p>
             </div>
 
@@ -281,7 +281,7 @@
                   class="nlp-sandbox-input"
                   id="nlp-input"
                   value="edge:top page:quick spring:3.8 hit:60hz !pinned"
-                  placeholder="Try typing: edge:right page:settings !pinned..."
+                  placeholder="Try typing: edge:right page:recorder fps:60 !recording..."
                 />
                 <button class="nlp-clear-btn" id="nlp-clear-btn" aria-label="Clear input">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -293,8 +293,8 @@
               <div class="nlp-presets-row">
                 <button class="nlp-preset-btn" data-preset="edge:top page:quick spring:3.8 hit:60hz !pinned">Top Quick Deck</button>
                 <button class="nlp-preset-btn" data-preset="edge:right page:collapsed upright:true hit:60hz">Right Vertical Dock</button>
-                <button class="nlp-preset-btn" data-preset="edge:top page:settings !pinned">Settings</button>
-                <button class="nlp-preset-btn" data-preset="edge:top page:power !pinned">Power Menu</button>
+                <button class="nlp-preset-btn" data-preset="edge:top page:recorder fps:60 mic:on !recording">60 FPS Recording</button>
+                <button class="nlp-preset-btn" data-preset="edge:top page:audio wasapi:sessions !pinned">WASAPI Mixer</button>
               </div>
               <div class="nlp-output-chips" id="nlp-chips"></div>
             </div>
@@ -306,7 +306,7 @@
               <span class="bento-card-tag">100% Local Execution</span>
               <h3 class="bento-card-title">Zero Cloud Telemetry</h3>
               <p class="bento-card-desc">
-                No remote servers, no analytics SDKs, no background webviews. All system hooks talk directly to Win32, WinRT SMTC, Shell32, and Netsh WLAN on-device.
+                No remote servers, no analytics SDKs, no background webviews. All system hooks talk directly to Win32, WinRT, and WASAPI on-device.
               </p>
             </div>
 
@@ -334,54 +334,62 @@
             </div>
           </article>
 
-          <!-- Card 3: Settings Switchboard & Safe Power Menu -->
+          <!-- Card 3: 60 FPS Screen Recorder Simulator -->
           <article class="spotlight-card reveal-item" data-tilt>
             <div class="bento-card-top">
-              <span class="bento-card-tag">Tactile Switchboard &amp; Power</span>
-              <h3 class="bento-card-title">Settings &amp; Power Hub</h3>
+              <span class="bento-card-tag">FFmpeg Capture Engine</span>
+              <h3 class="bento-card-title">Crash-Safe 60 FPS Recorder</h3>
               <p class="bento-card-desc">
-                Rebind screen dock edges (Top Hardware Notch or Right Upright Dock), toggle autostart, and access two-step safe power controls.
+                Captures desktop video at 30 or 60 FPS into resilient <code>.mkv</code> segments with pause/resume and mic audio, then remuxes to <code>+faststart .mp4</code>.
               </p>
             </div>
 
             <div class="bento-preview-box">
               <div class="focus-sim-box">
-                <div style="display: flex; flex-direction: column; gap: 8px; width: 100%;">
-                  <div style="display: flex; gap: 6px; justify-content: center;">
-                    <button class="focus-sim-btn primary" id="sim-edge-top" style="padding: 0 12px; width: auto; font-size: 0.75rem; border-radius: 8px;">Top Notch (354×50)</button>
-                    <button class="focus-sim-btn" id="sim-edge-right" style="padding: 0 12px; width: auto; font-size: 0.75rem; border-radius: 8px;">Right Dock (68×198)</button>
-                  </div>
-                  <div style="display: flex; gap: 6px; justify-content: center;">
-                    <button class="nlp-preset-btn" id="sim-pwr-lock">Lock</button>
-                    <button class="nlp-preset-btn" id="sim-pwr-sleep">Sleep</button>
-                    <button class="nlp-preset-btn" id="sim-pwr-restart">Restart</button>
-                    <button class="nlp-preset-btn" id="sim-pwr-shutdown">Shut Down</button>
-                  </div>
+                <div class="focus-ring-container">
+                  <svg class="focus-ring-svg" width="84" height="84" viewBox="0 0 84 84">
+                    <circle class="focus-ring-bg" cx="42" cy="42" r="36" />
+                    <circle class="focus-ring-progress" id="focus-ring-circle" cx="42" cy="42" r="36" />
+                  </svg>
+                  <span class="focus-sim-timer" id="focus-sim-clock">00:14</span>
+                </div>
+                <div class="focus-sim-controls">
+                  <button class="focus-sim-btn primary" id="focus-sim-toggle" aria-label="Toggle screen recording timer">
+                    <svg class="play-icon" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <polygon points="6 3 20 12 6 21 6 3" />
+                    </svg>
+                  </button>
+                  <button class="focus-sim-btn" id="focus-sim-reset" aria-label="Reset screen recording timer">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                      <path d="M3 3v5h5" />
+                    </svg>
+                  </button>
                 </div>
               </div>
               <div class="focus-spotify-banner">
                 <div class="spotify-track-meta">
                   <span class="spotify-eq-bars" id="spotify-eq"><i></i><i></i><i></i><i></i></span>
-                  <span class="spotify-track-title" id="sim-settings-label">Active Edge: Top Hardware Notch (354×50)</span>
+                  <span class="spotify-track-title">Desktop Capture · H.264 60 FPS</span>
                 </div>
-                <span class="spotify-status-tag" id="settings-status-tag">Connected</span>
+                <span class="spotify-status-tag" id="spotify-status-tag">Ready</span>
               </div>
             </div>
           </article>
 
-          <!-- Card 4: WinRT SMTC Media Studio -->
+          <!-- Card 4: WinRT SMTC Media & WASAPI WaveBars -->
           <article class="spotlight-card reveal-item" data-tilt>
             <div class="bento-card-top">
-              <span class="bento-card-tag">WinRT SMTC Session</span>
-              <h3 class="bento-card-title">Now Playing Media Studio</h3>
+              <span class="bento-card-tag">WinRT SMTC + WASAPI</span>
+              <h3 class="bento-card-title">Now Playing &amp; App Mixer</h3>
               <p class="bento-card-desc">
-                Reads live track metadata and album art from Windows Media Session, paired with interactive scrubber seeker and 4-bar reactive equalizer.
+                Reads live track metadata and album art from Windows Media Session, paired with per-application WASAPI volume &amp; mute sliders.
               </p>
             </div>
 
             <div class="bento-preview-box whisper-sim-wrap">
               <div class="whisper-mic-row">
-                <button class="whisper-mic-btn" id="whisper-mic" title="Click to test live WaveBars &amp; SMTC telemetry" aria-label="Pulse WaveBars equalizer">
+                <button class="whisper-mic-btn" id="whisper-mic" title="Click to test live WaveBars &amp; WASAPI telemetry" aria-label="Pulse WaveBars equalizer">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
                     <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
@@ -392,7 +400,7 @@
                 </div>
               </div>
               <div class="whisper-output-text" id="whisper-text">
-                "SMTC Session: Midnight City — M83 (01:42 / 04:03) · High-DPI album art cached · 4-bar WaveBars active"
+                "SMTC Session: Midnight City — M83 (01:42 / 04:03) · WASAPI: Spotify 88%, Chrome 65%, Discord 45%"
               </div>
             </div>
           </article>
@@ -425,7 +433,7 @@
                 <span class="free-slot-tag">Tile 2: Bluetooth Radios</span>
                 <span class="free-slot-tag">Tile 3: Audio Mute</span>
                 <span class="free-slot-tag">Tile 4: Files Hub</span>
-                <span class="free-slot-tag">Tile 5: Settings &amp; Power</span>
+                <span class="free-slot-tag">Tile 5: 60 FPS Record</span>
               </div>
             </div>
           </article>
@@ -468,7 +476,7 @@
     "launcher": "Ctrl+Alt+L (Win32 RegisterHotKey)",
     "dismiss": "Escape / Outside Click (60 Hz VK_LBUTTON poll)"
   },
-  "bridges": ["WinRT SMTC", "Win32 WS_EX_TRANSPARENT", "Shell32 SHGetFileInfoW", "Netsh WLAN"]
+  "bridges": ["WinRT SMTC", "WASAPI pycaw", "Shell32 SHGetFileInfoW", "FFmpeg 60fps"]
 }</code></pre>
               </div>
             </div>
@@ -501,7 +509,7 @@
             </button>
             <button class="video-chapter-tab" role="tab" aria-selected="false" data-chapter="2">
               <span class="chapter-time">00:12 · 03</span>
-              <span class="chapter-name">SMTC Media Player</span>
+              <span class="chapter-name">SMTC Media &amp; Mixer</span>
               <div class="chapter-progress"></div>
             </button>
             <button class="video-chapter-tab" role="tab" aria-selected="false" data-chapter="3">
@@ -511,7 +519,7 @@
             </button>
             <button class="video-chapter-tab" role="tab" aria-selected="false" data-chapter="4">
               <span class="chapter-time">00:24 · 05</span>
-              <span class="chapter-name">Settings &amp; Power</span>
+              <span class="chapter-name">60 FPS Recorder &amp; Radios</span>
               <div class="chapter-progress"></div>
             </button>
           </div>
@@ -522,7 +530,7 @@
               <span class="hero-pill-badge" id="video-chapter-badge">Chapter 1 of 5 · Full Tour</span>
               <h3 id="video-chapter-heading">Complete EkPill Hardware-Notch Tour</h3>
               <p id="video-chapter-desc">
-                Watch the collapsed top-edge capsule expand with damped spring physics into Quick Settings, morph into the WinRT SMTC Media Player, browse local drives in Files Hub, filter apps via Ctrl+Alt+L, and access tactile Settings &amp; Power.
+                Watch the collapsed top-edge capsule expand with damped spring physics into Quick Settings, morph into the WinRT SMTC Media Player, open the WASAPI Per-App Audio Mixer, browse local drives in Files Hub, filter apps via Ctrl+Alt+L, and record at 60 FPS.
               </p>
               <ul class="video-feature-list" id="video-chapter-features">
                 <li>
@@ -535,13 +543,13 @@
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span>WinRT SMTC Now Playing media player with high-DPI album art and equalizer</span>
+                  <span>WinRT SMTC Now Playing + WASAPI per-application audio session sliders</span>
                 </li>
                 <li>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span>Native Files Hub, Ctrl+Alt+L App Launcher, and Settings Switchboard</span>
+                  <span>Native Files Hub, Ctrl+Alt+L App Launcher, and 60 FPS Screen Recorder</span>
                 </li>
               </ul>
 
@@ -722,7 +730,7 @@
                 <div class="shortcut-preview-img-wrap">
                   <img
                     id="shortcut-preview-img"
-                    src="./shots/app-launcher-dark.png"
+                    src="./shots/app-launcher-light.png"
                     alt="Shortcut live response preview"
                     width="900"
                     height="620"
@@ -817,7 +825,7 @@
                   <td class="matrix-ekpill-col">
                     <span class="matrix-yes">
                       <svg class="matrix-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
-                      SMTC + WaveBars
+                      SMTC + 7-Bar EQ
                     </span>
                   </td>
                   <td><span class="matrix-partial">Basic flyout</span></td>
@@ -826,33 +834,33 @@
                 </tr>
                 <tr>
                   <td class="matrix-feat-col">
-                    Settings Switchboard &amp; Edge Rebinding
-                    <small>Switch dock edge (Top/Right), toggle autostart, and hotkey binding</small>
+                    Per-Application WASAPI Audio Mixer
+                    <small>Individual volume &amp; mute sliders for every active audio app</small>
                   </td>
                   <td class="matrix-ekpill-col">
                     <span class="matrix-yes">
                       <svg class="matrix-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
-                      In-Capsule Switchboard
+                      In-Capsule Mixer
                     </span>
                   </td>
                   <td><span class="matrix-partial">Buried in Settings</span></td>
-                  <td><span class="matrix-no"><svg class="matrix-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg> Edit .ini files</span></td>
-                  <td><span class="matrix-no"><svg class="matrix-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg> Limited</span></td>
+                  <td><span class="matrix-no"><svg class="matrix-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg> Master only</span></td>
+                  <td><span class="matrix-no"><svg class="matrix-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg> Master only</span></td>
                 </tr>
                 <tr>
                   <td class="matrix-feat-col">
-                    Two-Step Safe Power Menu
-                    <small>Lock, Sleep, Sign out, Restart, and Shut Down with confirmation</small>
+                    Built-in 30/60 FPS Screen Recorder
+                    <small>Crash-safe Matroska (.mkv) capture with automatic .mp4 remux</small>
                   </td>
                   <td class="matrix-ekpill-col">
                     <span class="matrix-yes">
                       <svg class="matrix-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
-                      Two-Step Safe Bar
+                      60 FPS + Mic + Pause
                     </span>
                   </td>
-                  <td><span class="matrix-partial">Start Menu clicks</span></td>
-                  <td><span class="matrix-no"><svg class="matrix-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg> Plugins required</span></td>
-                  <td><span class="matrix-no"><svg class="matrix-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg> Basic only</span></td>
+                  <td><span class="matrix-partial">External Snipping Tool</span></td>
+                  <td><span class="matrix-no"><svg class="matrix-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg> None</span></td>
+                  <td><span class="matrix-no"><svg class="matrix-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg> None</span></td>
                 </tr>
                 <tr>
                   <td class="matrix-feat-col">
@@ -875,13 +883,13 @@
         </div>
       </section>
 
-      <!-- ================= RETINA DARK GALLERY ================= -->
+      <!-- ================= RETINA LIGHT GALLERY ================= -->
       <section class="section-wrapper" id="gallery" aria-labelledby="gallery-title">
         <div class="section-header reveal-item">
           <p class="section-eyebrow">2x Retina Visual Gallery</p>
           <h2 class="section-title" id="gallery-title">Every surface captured live.</h2>
           <p class="section-desc">
-            Click any card below to inspect the full-resolution Retina capture in the interactive Lightbox.
+            Click any card below to inspect the full-resolution Retina capture in the interactive Lightbox, or toggle between Light and Dark studio backdrops.
           </p>
 
           <div class="gallery-controls-bar">
@@ -891,13 +899,16 @@
               <button class="filter-chip" data-filter="media">Media &amp; Audio</button>
               <button class="filter-chip" data-filter="tools">Files, Apps &amp; Capture</button>
             </div>
+            <button type="button" class="btn btn-secondary btn-sm" id="gallery-theme-toggle" style="margin-left: 0.75rem">
+              <span id="gallery-theme-text">Backdrop: Light</span>
+            </button>
           </div>
         </div>
 
         <div class="gallery-cards-grid reveal-item" id="gallery-grid">
           <div class="gallery-card" data-category="core" data-idx="0" data-shot="capsule-top">
             <div class="gallery-card-inner">
-              <img data-shot="capsule-top" src="./shots/capsule-top-dark.png" alt="Top &amp; Right Edge Capsule" loading="lazy" />
+              <img data-shot="capsule-top" src="./shots/capsule-top-light.png" alt="Top &amp; Right Edge Capsule" loading="lazy" width="900" height="620" />
             </div>
             <div class="gallery-card-caption">
               <b>Top &amp; Right Edge Capsule</b>
@@ -907,7 +918,7 @@
 
           <div class="gallery-card" data-category="core" data-idx="1" data-shot="quick-settings">
             <div class="gallery-card-inner">
-              <img data-shot="quick-settings" src="./shots/quick-settings-dark.png" alt="Quick Settings Hub" loading="lazy" />
+              <img data-shot="quick-settings" src="./shots/quick-settings-light.png" alt="Quick Settings Hub" loading="lazy" width="900" height="620" />
             </div>
             <div class="gallery-card-caption">
               <b>Quick Settings Hub</b>
@@ -917,27 +928,27 @@
 
           <div class="gallery-card" data-category="media" data-idx="2" data-shot="media-player">
             <div class="gallery-card-inner">
-              <img data-shot="media-player" src="./shots/media-player-dark.png" alt="Now Playing Studio" loading="lazy" />
+              <img data-shot="media-player" src="./shots/media-player-light.png" alt="Now Playing Studio" loading="lazy" width="900" height="620" />
             </div>
             <div class="gallery-card-caption">
               <b>Now Playing Studio</b>
-              <span>WinRT SMTC Art &amp; WaveBars</span>
+              <span>WinRT SMTC Art &amp; 7-Bar EQ</span>
             </div>
           </div>
 
-          <div class="gallery-card" data-category="tools" data-idx="3" data-shot="settings-switchboard">
+          <div class="gallery-card" data-category="media" data-idx="3" data-shot="audio-mixer">
             <div class="gallery-card-inner">
-              <img data-shot="settings-switchboard" src="./shots/settings-switchboard-dark.png" alt="Settings Switchboard" loading="lazy" />
+              <img data-shot="audio-mixer" src="./shots/audio-mixer-light.png" alt="Per-App Audio Mixer" loading="lazy" width="900" height="620" />
             </div>
             <div class="gallery-card-caption">
-              <b>Settings Switchboard</b>
-              <span>Dock Edge, Autostart &amp; Rebind</span>
+              <b>Per-App Audio Mixer</b>
+              <span>WASAPI Session Volume Sliders</span>
             </div>
           </div>
 
           <div class="gallery-card" data-category="core" data-idx="4" data-shot="wifi-bluetooth">
             <div class="gallery-card-inner">
-              <img data-shot="wifi-bluetooth" src="./shots/wifi-bluetooth-dark.png" alt="Wi-Fi &amp; Bluetooth Manager" loading="lazy" />
+              <img data-shot="wifi-bluetooth" src="./shots/wifi-bluetooth-light.png" alt="Wi-Fi &amp; Bluetooth Manager" loading="lazy" width="900" height="620" />
             </div>
             <div class="gallery-card-caption">
               <b>Wi-Fi &amp; Bluetooth</b>
@@ -947,7 +958,7 @@
 
           <div class="gallery-card" data-category="tools" data-idx="5" data-shot="files-hub">
             <div class="gallery-card-inner">
-              <img data-shot="files-hub" src="./shots/files-hub-dark.png" alt="Native Files Hub" loading="lazy" />
+              <img data-shot="files-hub" src="./shots/files-hub-light.png" alt="Native Files Hub" loading="lazy" width="900" height="620" />
             </div>
             <div class="gallery-card-caption">
               <b>Native Files Hub</b>
@@ -957,7 +968,7 @@
 
           <div class="gallery-card" data-category="tools" data-idx="6" data-shot="app-launcher">
             <div class="gallery-card-inner">
-              <img data-shot="app-launcher" src="./shots/app-launcher-dark.png" alt="Instant App Launcher" loading="lazy" />
+              <img data-shot="app-launcher" src="./shots/app-launcher-light.png" alt="Instant App Launcher" loading="lazy" width="900" height="620" />
             </div>
             <div class="gallery-card-caption">
               <b>Instant App Launcher</b>
@@ -965,13 +976,13 @@
             </div>
           </div>
 
-          <div class="gallery-card" data-category="tools" data-idx="7" data-shot="power-menu">
+          <div class="gallery-card" data-category="tools" data-idx="7" data-shot="recorder-settings">
             <div class="gallery-card-inner">
-              <img data-shot="power-menu" src="./shots/power-menu-dark.png" alt="Safe Power Menu" loading="lazy" />
+              <img data-shot="recorder-settings" src="./shots/recorder-settings-light.png" alt="60 FPS Recorder &amp; Settings" loading="lazy" width="900" height="620" />
             </div>
             <div class="gallery-card-caption">
-              <b>Safe Power Menu</b>
-              <span>Lock, Sleep, Restart &amp; Shut Down</span>
+              <b>60 FPS Recorder &amp; Settings</b>
+              <span>FFmpeg Capture &amp; Power Menu</span>
             </div>
           </div>
         </div>
@@ -987,7 +998,7 @@
             </div>
             <h2 id="download-title">Get EkPill for Windows</h2>
             <p class="sub">
-              Bundles Python 3.13, Qt6 QML, PySide6, WinRT, and Shell32 bridges into a single verified installer (<span data-size>180 MB</span>). Zero external runtime setup required.
+              Bundles Python 3.13, Qt6 QML, PySide6, WinRT/WASAPI bridges, and FFmpeg into a single verified installer (<span data-size>180 MB</span>). Zero external runtime setup required.
             </p>
 
             <div class="download-cta-row">
@@ -1091,21 +1102,21 @@
 
           <details class="faq-entry" data-faq-cat="media">
             <summary class="faq-summary">
-              <span>How do the Now Playing media controls work?</span>
+              <span>How do the Now Playing media controls and Per-App Audio Mixer work?</span>
               <span class="faq-toggle-icon">+</span>
             </summary>
             <p class="faq-body-text">
-              EkPill queries Windows Runtime GlobalSystemMediaTransportControlsSessionManager on a background thread to read track title, artist, album art thumbnail streams, and playback timeline from Spotify, Chrome, Apple Music, or VLC. You get full transport control (Play, Pause, Next, Previous) and interactive seek bar right in the capsule.
+              EkPill queries Windows Runtime GlobalSystemMediaTransportControlsSessionManager on a background thread to read track title, artist, album art thumbnail streams, and playback timeline from Spotify, Chrome, Apple Music, or VLC. For audio routing, it binds directly to WASAPI IAudioEndpointVolume and IAudioSessionManager2 via pycaw so you can adjust or mute individual application audio streams inside the capsule.
             </p>
           </details>
 
-          <details class="faq-entry" data-faq-cat="system">
+          <details class="faq-entry" data-faq-cat="media">
             <summary class="faq-summary">
-              <span>How does the two-step Safe Power Menu prevent accidental clicks?</span>
+              <span>How does the built-in 30/60 FPS Screen Recorder avoid corrupted files?</span>
               <span class="faq-toggle-icon">+</span>
             </summary>
             <p class="faq-body-text">
-              The Power Menu requires a two-step confirmation bar before executing actions like Shut Down or Restart. Clicking an action exposes the confirmation toggle with clear visual feedback, preventing accidental session termination or sleep.
+              EkPill captures the desktop via FFmpeg (ddagrab hardware duplication with automatic fallback to gdigrab + libx264 -preset ultrafast) into a crash-safe Matroska (.mkv) container while recording. When you stop the recording, it automatically remuxes the segments into a web-ready .mp4 (-movflags +faststart).
             </p>
           </details>
 
@@ -1115,7 +1126,7 @@
               <span class="faq-toggle-icon">+</span>
             </summary>
             <p class="faq-body-text">
-              EkPillSetup.exe (188,489,585 bytes) is a 100% self-contained Inno Setup + PyInstaller distribution. It bundles the Python 3.13 runtime, Qt6 / PySide6 QML libraries, Direct3D/OpenGL shaders, and WinRT bridges so media control, files hub, app launcher, and QML animations work out of the box on any clean Windows 10 or 11 PC.
+              EkPillSetup.exe (188,489,585 bytes) is a 100% self-contained Inno Setup + PyInstaller distribution. It bundles the Python 3.13 runtime, Qt6 / PySide6 QML libraries, Direct3D/OpenGL shaders, WinRT &amp; WASAPI bridges, and a dedicated ffmpeg.exe binary so screen recording, media control, and QML animations work out of the box on any clean Windows 10 or 11 PC.
             </p>
           </details>
 
@@ -1152,7 +1163,7 @@
         </div>
         <div class="footer-bottom-row">
           <span>© <span data-year>2026</span> EkPill. Engineered for Windows 10 &amp; 11. 100% Offline &amp; Open Source (MIT).</span>
-          <span>Windows is a trademark of Microsoft Corporation. Built with Qt6 QML, PySide6, WinRT SMTC, and Win32.</span>
+          <span>Windows is a trademark of Microsoft Corporation. Built with Qt6 QML, PySide6, WinRT, WASAPI, and FFmpeg.</span>
         </div>
       </div>
     </footer>
@@ -1163,7 +1174,7 @@
       <button class="lightbox-nav-btn prev" id="lb-prev" aria-label="Previous screenshot">‹</button>
       <button class="lightbox-nav-btn next" id="lb-next" aria-label="Next screenshot">›</button>
       <div class="lightbox-content">
-        <img id="lb-image" src="./shots/capsule-top-dark.png" alt="Enlarged screenshot" />
+        <img id="lb-image" src="./shots/capsule-top-light.png" alt="Enlarged screenshot" />
         <div class="lightbox-caption" id="lb-caption"></div>
       </div>
     </div>
