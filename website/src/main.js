@@ -484,6 +484,8 @@ function updateVideoTourStage(idx) {
     img.setAttribute("data-src", data.gif);
   }
   if (video) {
+    video.style.display = "block";
+    if (img) img.style.display = "none";
     video.onerror = () => {
       video.style.display = "none";
       if (img) {
@@ -818,6 +820,13 @@ $("#gallery-theme-toggle")?.addEventListener("click", () => {
     if (img && shot) img.src = `./shots/${shot}-${currentAppTheme}.png`;
   });
 
+  const activeShortcutCard = $(".shortcut-row-card.active");
+  const activeKey = activeShortcutCard?.dataset?.shortcut || "ctrl-alt-l";
+  const shortcutImg = $("#shortcut-preview-img");
+  if (shortcutImg && shortcutConfig[activeKey]) {
+    shortcutImg.src = `./shots/${shortcutConfig[activeKey].shot}-${currentAppTheme}.png`;
+  }
+
   showToast(`Gallery & Hero switched to ${currentAppTheme} backdrop`);
 });
 
@@ -855,10 +864,16 @@ $$("#gallery-grid .gallery-card").forEach((card) => {
   });
 });
 
-$$(".shortcut-preview-img-wrap img, #hero-app-image").forEach((img) => {
-  img.addEventListener("click", () => {
-    openLightbox(0);
-  });
+$("#hero-app-image")?.addEventListener("click", () => {
+  openLightbox(0);
+});
+
+$("#shortcut-preview-img")?.addEventListener("click", () => {
+  const activeShortcutCard = $(".shortcut-row-card.active");
+  const activeKey = activeShortcutCard?.dataset?.shortcut;
+  const shotId = activeKey && shortcutConfig[activeKey] ? shortcutConfig[activeKey].shot : null;
+  const foundIdx = shotId ? galleryItems.findIndex((g) => g.shot === shotId) : 0;
+  openLightbox(foundIdx >= 0 ? foundIdx : 0);
 });
 
 lbPrev?.addEventListener("click", () => openLightbox(currentLbIndex - 1));

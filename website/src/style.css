@@ -322,7 +322,19 @@ kbd {
   height: 2px;
   background-color: var(--text-primary);
   border-radius: 2px;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.15s ease;
+}
+
+.mobile-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Mobile Drawer */
@@ -543,10 +555,11 @@ kbd {
 }
 
 .hero-float-bubble {
-  width: 76px;
-  height: 76px;
-  border-radius: 50%;
-  box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  width: 220px;
+  height: auto;
+  border-radius: var(--radius-pill);
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.22)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.08));
+  display: block;
 }
 
 .hero-float-pip-wrap {
@@ -562,10 +575,11 @@ kbd {
 }
 
 .hero-float-pip {
-  width: 300px;
+  width: 280px;
   height: auto;
-  border-radius: var(--radius-md);
-  box-shadow: 0 20px 48px -6px rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-pill);
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.22)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.08));
+  display: block;
 }
 
 /* Windows 11 App Light Frame */
@@ -1286,13 +1300,19 @@ kbd {
 
 /* Heatmap Grid */
 .heatmap-grid {
-  display: grid;
-  grid-template-rows: repeat(7, 12px);
-  grid-auto-flow: column;
-  grid-auto-columns: 12px;
+  display: flex;
   gap: 4px;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   padding-bottom: 0.5rem;
+  scrollbar-width: thin;
+}
+
+.heatmap-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-shrink: 0;
 }
 
 .heatmap-cell {
@@ -1300,6 +1320,13 @@ kbd {
   height: 12px;
   border-radius: 3px;
   background: #f0f0f2;
+  flex-shrink: 0;
+  transition: transform 0.1s ease;
+}
+
+.heatmap-cell:hover {
+  transform: scale(1.35);
+  z-index: 2;
 }
 
 .heatmap-cell[data-level="1"] { background: #d1f0d8; }
@@ -1314,6 +1341,8 @@ kbd {
   margin-top: 0.85rem;
   font-size: 0.8rem;
   color: var(--text-secondary);
+  flex-wrap: wrap;
+  gap: 0.6rem;
 }
 
 .heatmap-legend {
@@ -1833,10 +1862,13 @@ kbd {
 
 .matrix-scroll {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
 
 .matrix-table {
   width: 100%;
+  min-width: 760px;
   border-collapse: collapse;
   text-align: left;
 }
@@ -2417,6 +2449,15 @@ kbd {
 /* ==========================================================================
    RESPONSIVE DESIGN BREAKPOINTS
    ========================================================================== */
+@media (max-width: 1180px) {
+  .hero-float-bubble-wrap {
+    right: 8px;
+  }
+  .hero-float-pip-wrap {
+    left: 8px;
+  }
+}
+
 @media (max-width: 1024px) {
   .bento-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -2467,5 +2508,80 @@ kbd {
   }
   .section-wrapper {
     padding: 4rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-cta-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-meta-strip {
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+  }
+  .download-box {
+    padding: 1.75rem 1.25rem;
+  }
+  .download-cta-row .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .shortcut-station-box {
+    padding: 1.5rem 1.2rem;
+  }
+  .shortcut-row-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+  .video-stage {
+    padding: 1.5rem 1.2rem;
+    gap: 1.5rem;
+  }
+  .video-playback-controls {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .sha-code-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  .sha-copy-btn {
+    justify-content: center;
+    width: 100%;
+  }
+  .gallery-filters-group {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .filter-chip {
+    white-space: nowrap;
+    font-size: 0.78rem;
+    padding: 0.35rem 0.75rem;
+  }
+  .lightbox-nav-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.4rem;
+  }
+  .lightbox-nav-btn.prev {
+    left: 0.5rem;
+  }
+  .lightbox-nav-btn.next {
+    right: 0.5rem;
+  }
+  .footer-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+  .footer-nav {
+    flex-direction: column;
+    gap: 0.75rem;
   }
 }
