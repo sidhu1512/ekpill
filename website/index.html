@@ -51,7 +51,7 @@
         </nav>
 
         <div class="nav-right">
-          <a href="#download" class="btn btn-primary btn-sm" data-download>Download Free</a>
+          <a href="#download" class="btn btn-primary btn-sm" data-download>Download</a>
           <button
             class="mobile-toggle"
             id="mobile-toggle"
@@ -68,11 +68,11 @@
     <!-- Mobile Navigation Drawer -->
     <nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
       <a href="#features">Features</a>
-      <a href="#screen-recording">Screen Recording Walkthrough</a>
-      <a href="#shortcuts">Physical Shortcuts</a>
-      <a href="#compare">Comparison Matrix</a>
-      <a href="#gallery">Visual Gallery</a>
-      <a href="#download">Download for Windows</a>
+      <a href="#screen-recording">Walkthrough</a>
+      <a href="#shortcuts">Shortcuts</a>
+      <a href="#compare">Comparison</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#download">Download</a>
       <a href="#faq">FAQ</a>
     </nav>
 
@@ -96,9 +96,9 @@
           </h1>
 
           <p class="hero-subtitle reveal-item revealed">
-            EkPill docks seamlessly to the top or right display edge with hardware-notch concave fillets and
-            <b>60 Hz click-through hit-testing</b>. Expand on demand for Quick Settings, WinRT SMTC Media,
-            Native Files Hub, Instant App Launcher, Settings Switchboard, and Safe Power Menu.
+            EkPill docks flush to the top or right display edge with hardware concave fillets and
+            <b>60 Hz click-through hit-testing</b>. Expands on demand into native quick settings,
+            WinRT media, files, and apps.
           </p>
 
           <div class="hero-cta-group reveal-item revealed">
@@ -108,13 +108,13 @@
                 <polyline points="7 10 12 15 17 10" />
                 <line x1="12" y1="15" x2="12" y2="3" />
               </svg>
-              <span>Download Free for Windows</span>
+              <span>Download for Windows</span>
             </a>
             <a href="#screen-recording" class="btn btn-secondary btn-large">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <polygon points="5 3 19 12 5 21 5 3" />
               </svg>
-              <span>Watch Screen Recording</span>
+              <span>Watch Walkthrough</span>
             </a>
           </div>
 
@@ -129,13 +129,13 @@
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
-              <span>60 Hz WS_EX_TRANSPARENT Click-Through</span>
+              <span>60 Hz Click-Through Hit-Testing</span>
             </span>
             <span class="hero-meta-item">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
-              <span>Zero Cloud Telemetry · MIT Source</span>
+              <span>100% Local · MIT License</span>
             </span>
           </div>
         </div>
@@ -166,21 +166,17 @@
             />
           </div>
 
-          <!-- Windows 11 App Frame -->
+          <!-- Display Stage Frame -->
           <div class="app-frame" id="hero-frame">
-            <div class="app-titlebar">
-              <div class="app-titlebar-left">
+            <div class="display-bezel-header">
+              <div class="display-bezel-left">
                 <img src="./icon.png" width="16" height="16" alt="" aria-hidden="true" />
-                <span>EkPill — Dynamic Desktop Capsule</span>
-                <span class="app-mode-badge">Qt6 QML + WinRT</span>
+                <span>EkPill Hardware Notch</span>
+                <span class="app-mode-badge">Top Dock</span>
               </div>
-              <div class="app-titlebar-controls">
+              <div class="display-bezel-right">
                 <span class="app-titlebar-status">60 Hz Click-Through · Windows 11</span>
-                <div class="app-window-buttons" aria-hidden="true">
-                  <span class="app-win-btn minimize"></span>
-                  <span class="app-win-btn maximize"></span>
-                  <span class="app-win-btn close"></span>
-                </div>
+                <span class="display-bezel-dot" title="Active Display Edge"></span>
               </div>
             </div>
 
@@ -197,6 +193,9 @@
                 <div class="app-live-status-bar">
                   <span class="status-indicator"></span>
                   <span id="hero-status-caption">Docked at Screen Edge · Ctrl + Alt + L for App Launcher · 100% Local</span>
+                  <a id="batman-experience-link" href="../docs/batman_island_experience.html" target="_blank" style="display: none; margin-left: auto; color: #f5c518; text-decoration: none; font-weight: 700; font-size: 11px; align-items: center; gap: 4px;">
+                    <span>Launch Keynote &amp; Interactive Experience &rarr;</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -204,49 +203,24 @@
         </div>
       </section>
 
-      <!-- ================= MARQUEE SECTION ================= -->
-      <section class="marquee-section" aria-label="System capabilities">
-        <div class="marquee-track" id="marquee-track">
-          <div class="marquee-card">
+      <!-- ================= CAPABILITIES SECTION ================= -->
+      <section class="capabilities-section" aria-label="System capabilities">
+        <div class="capabilities-grid">
+          <div class="capability-card">
             <span class="tag">60 Hz Hit-Testing</span>
-            <span><b>WS_EX_TRANSPARENT</b> passes mouse clicks outside the capsule straight through to underlying apps.</span>
+            <p><b>WS_EX_TRANSPARENT</b> passes mouse clicks outside the capsule straight through to underlying apps.</p>
           </div>
-          <div class="marquee-card">
-            <span class="tag">WinRT SMTC Media</span>
-            <span>Live album art, track metadata, interactive progress seeker, and responsive <b>WaveBars</b> equalizer.</span>
-          </div>
-          <div class="marquee-card">
-            <span class="tag">Settings Switchboard</span>
-            <span>Custom dock edge selector (Top/Right), Windows autostart toggle, and hotkey rebinding.</span>
-          </div>
-          <div class="marquee-card">
+          <div class="capability-card">
             <span class="tag">Dual-Edge Geometry</span>
-            <span>Dock as a <b>354×50 Top Hardware Notch</b> or a <b>68×198 Upright Right Dock</b> with concave fillets.</span>
+            <p>Dock as a <b>354×50 Top Hardware Notch</b> or a <b>68×198 Upright Right Dock</b> with concave fillets.</p>
           </div>
-          <div class="marquee-card">
-            <span class="tag">Safe Power Menu</span>
-            <span>Two-step safe power controls for <b>Lock, Sleep, Sign out, Restart, and Shut Down</b>.</span>
-          </div>
-          <div class="marquee-card">
-            <span class="tag">Files &amp; Launcher</span>
-            <span>Quick Folders, drive jumpers (<b>C:–Z:</b>), right-click context menu, and <b>Ctrl + Alt + L</b> search.</span>
-          </div>
-          <!-- Duplicate set for seamless continuous marquee -->
-          <div class="marquee-card">
-            <span class="tag">60 Hz Hit-Testing</span>
-            <span><b>WS_EX_TRANSPARENT</b> passes mouse clicks outside the capsule straight through to underlying apps.</span>
-          </div>
-          <div class="marquee-card">
+          <div class="capability-card">
             <span class="tag">WinRT SMTC Media</span>
-            <span>Live album art, track metadata, interactive progress seeker, and responsive <b>WaveBars</b> equalizer.</span>
+            <p>Live album art, track seeker, and responsive <b>WaveBars</b> 4-bar equalizer.</p>
           </div>
-          <div class="marquee-card">
-            <span class="tag">Settings Switchboard</span>
-            <span>Custom dock edge selector (Top/Right), Windows autostart toggle, and hotkey rebinding.</span>
-          </div>
-          <div class="marquee-card">
-            <span class="tag">Dual-Edge Geometry</span>
-            <span>Dock as a <b>354×50 Top Hardware Notch</b> or a <b>68×198 Upright Right Dock</b> with concave fillets.</span>
+          <div class="capability-card">
+            <span class="tag">Safe Power Controls</span>
+            <p>Two-step safe power controls for <b>Lock, Sleep, Sign out, Restart, and Shut Down</b>.</p>
           </div>
         </div>
       </section>
