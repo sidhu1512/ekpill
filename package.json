@@ -1,0 +1,12 @@
+{
+  "name": "ekpill-root",
+  "private": true,
+  "version": "1.3.0",
+  "scripts": {
+    "website:dev": "npm --prefix website run dev",
+    "website:build": "npm --prefix website run build",
+    "website:verify": "npm --prefix website run verify",
+    "website:deploy": "npm --prefix website run deploy:pages",
+    "website:deploy:dry": "node website/scripts/deploy-gh-pages.mjs --dry-run"
+  }
+}

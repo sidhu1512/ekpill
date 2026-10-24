@@ -1,0 +1,32 @@
+# Python & PyInstaller build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.spec
+ekpill/build/
+ekpill/dist/
+ekpill/Output/
+ekpill/live_verification_shots/
+ekpill/ekpill_extra_*.png
+ekpill/ekpill_extra_*.json
+ekpill/generate_showcase_media.py
+
+# Node & Vite build artifacts
+node_modules/
+website/node_modules/
+website/dist/
+
+# Environment & IDE files
+.env
+.venv/
+venv/
+.vscode/
+.idea/
+.agents/
+*.log
+
+.freebuff/
+app_art_assets/
+
+ekpill/assets/bin/ffmpeg.exe
+

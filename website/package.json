@@ -1,0 +1,16 @@
+{
+  "name": "ekpill-showcase",
+  "private": true,
+  "version": "1.3.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "verify": "node ./scripts/verify-assets.mjs",
+    "deploy:pages": "node ./scripts/deploy-gh-pages.mjs"
+  },
+  "devDependencies": {
+    "vite": "^6.2.0"
+  }
+}

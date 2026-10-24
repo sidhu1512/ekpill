@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+
+# Raw full-screen selftest captures and their geometry sidecars; the cropped
+# shots and the generated preview.html are the artifacts that get kept.
+ekpill_selftest*.png
+ekpill_selftest*.json
+
+# The running app's own log, and the one-command suite's run logs.
+ekpill_run.log
+verify_full*.log
+
+# Packaging output: PyInstaller workdir/dist and the generated .ico.
+build/
+dist/
+Output/
+*.spec.bak
